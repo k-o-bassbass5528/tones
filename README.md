@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# アプリ名
+/assets/images/tones_logo.png
+
