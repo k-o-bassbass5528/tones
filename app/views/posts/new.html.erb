@@ -1,0 +1,8 @@
+<h1>新規投稿</h1>
+<%= form_with model: @post, local:true do |f| %>
+    <h4>楽器名</h4>
+    <%= f.text_field :instrument %>
+    <h4>紹介コメント・こだわりポイント</h4>
+    <%= f.text_area :text %>
+    <%= f.submit '投稿する' %>
+<% end %>
