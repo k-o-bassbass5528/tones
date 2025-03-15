@@ -2,4 +2,5 @@
 <p><%= @post.instrument %></p>
 <h2>紹介コメント・こだわりポイント</h2>
 <p><%= @post.text %></p>
-<%= link_to '戻る', :back %>
+<%= link_to '編集する', edit_post_path(@post.id) %><br>
+<%= link_to '投稿一覧ページへ', posts_path %>
