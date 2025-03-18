@@ -18,7 +18,7 @@
                         <% end %>
                     <% end %>
                 </p>
-                <h3>紹介コメント・こだわりポイント</h3>
+                <h2>紹介コメント・こだわりポイント</h2>
                 <p id="text"><%= @post.text %></p>
                 <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info mr-3" %>
                 <%= link_to '削除する', post_path(@post.id), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}, class: "btn btn-danger" %><br>
