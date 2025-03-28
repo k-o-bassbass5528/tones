@@ -1,15 +1,7 @@
 ja:
   errors:
     format: "%{message}"
-    messages:
-      not_saved:
-        one: "1件のエラーのため保存できませんでした。"
-        other: "%{count}件のエラーのため保存できませんでした。"
   activerecord:
-    models:
-      user:
-        one: "ユーザー"
-        other: "ユーザー"
     errors:
       models:
         user:
