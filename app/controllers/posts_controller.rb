@@ -50,7 +50,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:user_id, :instrument, :text, :image, :status)
+    params.require(:post).permit(:user_id, :instrument, :text, :status, :image)
   end
 
 end

@@ -148,6 +148,9 @@ GEM
       domain_name (~> 0.5)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
+    image_processing (1.14.0)
+      mini_magick (>= 4.9.5, < 6)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (2.1.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -294,6 +297,9 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.4.1)
+    ruby-vips (2.2.3)
+      ffi (~> 1.12)
+      logger
     ruby2_keywords (0.0.5)
     rubyzip (2.4.1)
     sassc (2.4.0)
@@ -380,10 +386,12 @@ DEPENDENCIES
   devise-i18n (= 1.12.1)
   enum_help
   error_highlight (>= 0.4.0)
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   jquery-rails
   kaminari
+  mini_magick
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   refile!
