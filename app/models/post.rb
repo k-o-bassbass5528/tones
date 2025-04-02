@@ -5,7 +5,7 @@ class Post < ApplicationRecord
     has_many :favorites, dependent: :destroy
 
     validates :instrument, presence: true, length: { maximum: 50 }
-    validates :text, presence: true, length: { maximum: 200 }
+    validates :text, presence: true, length: { maximum: 150 }
     validates :image, presence: true
 
     enum status: { published: 0, draft: 1 }
