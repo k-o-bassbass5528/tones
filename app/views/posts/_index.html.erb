@@ -9,7 +9,7 @@
     <div class="one-post col-sm-4 mb-3">
         <%= link_to post_path(post) do %>
             <p class="caption"><%= post.user.name %></p>
-            <%= attachment_image_tag post, :image, format: 'jpeg', size: '300x180' %>
+            <%= attachment_image_tag post, :image, format: 'jpeg', size: '300x200' %>
             <p class="caption"><%= post.instrument %></p>
             <p class="caption"><%= "#{post.comments.count} コメント" %></p>
         <% end %>
