@@ -25,6 +25,7 @@
                             ♡<%= @post.favorites.count %> いいね
                         <% end %>
                     <% end %>
+                    閲覧数: <%= @post.view_counts.count %>
                 </p>
                 <h3>紹介コメント・こだわりポイント</h3>
                 <p id="text"><%= @post.text %></p>

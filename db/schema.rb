@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_28_135206) do
+ActiveRecord::Schema[7.1].define(version: 2025_04_05_131943) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -64,6 +64,15 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_28_135206) do
     t.integer "status", default: 0, null: false
   end
 
+  create_table "read_counts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "instrument_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_read_counts_on_instrument_id"
+    t.index ["user_id"], name: "index_read_counts_on_user_id"
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id", null: false
     t.integer "followed_id", null: false
@@ -88,8 +97,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_28_135206) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "view_counts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "read_counts", "instruments"
+  add_foreign_key "read_counts", "users"
   add_foreign_key "relationships", "users", column: "followed_id"
   add_foreign_key "relationships", "users", column: "follower_id"
 end
