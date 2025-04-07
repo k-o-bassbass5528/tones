@@ -9,10 +9,10 @@
         </div>
         <% unless @user.id == current_user.id %>
             <% if (current_user.following? @user) && (@user.following? current_user) %>
-                <% if @isRoom == true %>
+                <% if @isRoom %>
                     <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a></p>
                 <% else %>
-                    <%= form_for @room do |f| %>
+                    <%= form_with url: rooms_path, model: @room, local: true do |f| %>
                         <%= fields_for @entry do |e| %>
                             <%= e.hidden_field :user_id, value: @user.id %>
                         <% end %>
@@ -43,10 +43,10 @@
         </div>
         <div class="d-flex">
             <%= link_to follows_user_path(@user) do %>
-                <h6>フォロー<%= @following_users.count %></h6>
+                <h6>フォロー<%= @followingUsers.count %></h6>
             <% end %>
             <%= link_to followers_user_path(@user) do %>
-                <h6>フォロワー<%= @follower_users.count %></h6>
+                <h6>フォロワー<%= @followerUsers.count %></h6>
             <% end %>
         </div>
         <div class="row mt-5 index-left w-100">

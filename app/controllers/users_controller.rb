@@ -9,34 +9,29 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).per(8).reverse_order
-    @following_users = @user.following_user
-    @follower_users = @user.follower_user
-    @user = User.find(params[:id])
+    @followingUsers = @user.following_user
+    @followerUsers = @user.follower_user
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
+    @isRoom = false
+    @roomId = nil
+    @room = Room.new
+    @entry = Entry.new
+
     if @user.id == current_user.id
+      # 自分のプロフィールページの場合の処理
     else
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
-          if cu.room_id == u.room_id then
-            @isroom = true
+          if cu.room_id == u.room_id
+            @isRoom = true
             @roomId = cu.room_id
           end
         end
       end
-      if @isroom
-      else
-        @room = Room.new
-        @roomId = cu.room_id
-      end
     end
-
   end
-  if @isRoom
-  else
-    @room = Room.new
-    @entry = Entry.new
-  end
+  
   def edit
     @user = User.find(params[:id])
   end
