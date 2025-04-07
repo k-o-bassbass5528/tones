@@ -1,21 +1,25 @@
-<% @entries.each do |e| %>
-    <% if @myUserId != e.user.id %>
-        <h2><%= e.user.name %>さんとのトークルーム</h2>
+<div class="cover-show">
+    <% @entries.each do |e| %>
+        <% if @myUserId != e.user.id %>
+            <h2><%= e.user.name %>さんとのトークルーム</h2>
+            <%= link_to "ユーザー一覧に戻る", users_path %>
+            <% end %>
+        <div class="container d-flex flex-column align-items-center">
+            <div class="row mt-5">
+            </div>
         </div>
-    <% end %>
-<% end %>
-<%= link_to "ユーザー一覧に戻る", users_path %>
-
-    <% if @messages.present? %>
-        <% @messages.each do |m| %>
+        <% if @messages.present? %>
+            <% @messages.each do |m| %>
             <% @myUserId == m.user.id %>
             <p><%= m.user.name %></p>
                 <p><%= m.message %></p>
         <% end%>
     <% end %>
 
-<%= form_with model: [@room, @message], local: true do |f| %>
-    <%= f.text_field :message, placeholder: "メッセージを入力してください" , size: 50, class:"form-text-field" %>
-    <%= f.hidden_field :room_id, value: @room.id %>
-    <%= f.submit "メッセージを送信" %>
-<% end %>
+    <%= form_with model: [@room, @message], local: true do |f| %>
+            <%= f.text_field :message, placeholder: "メッセージを入力してください" , size: 50, class:"form-text-field" %>
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <%= f.submit "メッセージを送信" %>
+        <% end %>
+    </div>
+</div>
