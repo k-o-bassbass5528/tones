@@ -1,25 +1,36 @@
 <div class="cover-show">
-    <% @entries.each do |e| %>
-        <% if @myUserId != e.user.id %>
-            <h2><%= e.user.name %>さんとのトークルーム</h2>
-            <%= link_to "ユーザー一覧に戻る", users_path %>
-            <% end %>
-        <div class="container d-flex flex-column align-items-center">
-            <div class="row mt-5">
+    <div class="container d-flex flex-column align-items-center">
+        <div class="row mt-5 position-relative">
+            <div class="background-image"></div>
+            <div class="content-overlay">
+                <% @entries.each do |e| %>
+                    <% if @myUserId != e.user.id %>
+                        <h2 class="text-white"><%= e.user.name %>さんとのトークルーム</h2>
+                    <% end %>
+                <% end %>
+                <%= link_to "ユーザー一覧に戻る", users_path, class: "btn btn-light" %>
             </div>
         </div>
-        <% if @messages.present? %>
-            <% @messages.each do |m| %>
-            <% @myUserId == m.user.id %>
-            <p><%= m.user.name %></p>
-                <p><%= m.message %></p>
-        <% end%>
-    <% end %>
-
-    <%= form_with model: [@room, @message], local: true do |f| %>
-            <%= f.text_field :message, placeholder: "メッセージを入力してください" , size: 50, class:"form-text-field" %>
-            <%= f.hidden_field :room_id, value: @room.id %>
-            <%= f.submit "メッセージを送信" %>
-        <% end %>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <% if @messages.present? %>
+                <% @messages.each do |m| %>
+                    <div class="message-container">
+                        <p class="message-user"><%= m.user.name %></p>
+                        <p class="message-content"><%= m.message %></p>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="row mt-3">
+            <%= form_with model: [@room, @message], local: true do |f| %>
+                <div class="d-flex">
+                    <%= f.text_field :message, placeholder: "メッセージを入力してください", size: 50, class: "form-control" %>
+                    <%= f.hidden_field :room_id, value: @room.id %>
+                    <%= f.submit "メッセージを送信", class: "btn btn-primary ms-2" %>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
