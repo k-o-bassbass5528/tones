@@ -18,10 +18,30 @@
         <div class="row">
             <% if @messages.present? %>
                 <% @messages.each do |m| %>
-                    <div class="message-container">
-                        <p class="message-user"><%= m.user.name %></p>
-                        <p class="message-content"><%= m.message %></p>
-                    </div>
+                    <% if @myUserId == m.user.id %>
+                        <div class="message-container my-message">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <div class="message-content">
+                                    <p class="mb-0"><%= m.message %></p>
+                                </div>
+                                <div class="user-icon ms-2">
+                                    <%= attachment_image_tag m.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                                </div>
+                            </div>
+                        </div>
+                    <% else %>
+                        <div class="message-container other-message">
+                            <div class="d-flex align-items-center">
+                                <div class="user-icon me-2">
+                                    <%= attachment_image_tag m.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                                </div>
+                                <div class="message-content">
+                                    <p class="user-name mb-1"><%= m.user.name %></p>
+                                    <p class="mb-0"><%= m.message %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
                 <% end %>
             <% end %>
         </div>

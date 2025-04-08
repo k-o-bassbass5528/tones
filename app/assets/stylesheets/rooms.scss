@@ -7,3 +7,44 @@
     background-size: 100% 100%;
 }
 
+.message-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.my-message {
+    background-color: #e3f2fd;
+    margin-left: 20%;
+}
+
+.other-message {
+    background-color: #f5f5f5;
+    margin-right: 20%;
+}
+
+.message-content {
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+.my-message .message-content {
+    background-color: #2196f3;
+    color: white;
+}
+
+.other-message .message-content {
+    background-color: #e0e0e0;
+}
+
+.user-name {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.user-icon img {
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
