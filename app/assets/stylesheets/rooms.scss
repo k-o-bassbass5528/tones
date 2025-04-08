@@ -5,39 +5,60 @@
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
     background-size: 100% 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    overflow-x: hidden;
 }
 
 .message-container {
     margin-bottom: 15px;
-    max-width: 60%;
+    display: flex;
+    align-items: flex-start;
 }
 
 .my-message {
-    margin-left: 25%;
+    justify-content: flex-end;
 }
 
 .other-message {
-    margin-right: 25%;
+    justify-content: flex-start;
 }
 
 .message-content {
     padding: 8px 12px;
     border-radius: 15px;
     word-wrap: break-word;
+    white-space: normal;
+    max-width: 70%;
 }
 
 .my-message .message-content {
     background-color: #2196f3;
     color: white;
+    order: 1;
 }
 
 .other-message .message-content {
     background-color: #e0e0e0;
+    order: 2;
 }
 
 .user-name {
     font-size: 0.8rem;
     color: #666;
+}
+
+.user-icon {
+    order: 2;
+    margin-left: 10px;
+}
+
+.my-message .user-icon {
+    order: 1;
+    margin-left: 0;
+    margin-right: 10px;
 }
 
 .user-icon img {
@@ -46,3 +67,7 @@
     flex-shrink: 0;
 }
 
+.alert-danger {
+    width: 50%;
+    margin: 0 auto;
+}

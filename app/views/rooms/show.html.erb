@@ -48,10 +48,17 @@
         <div class="row mt-3">
             <%= form_with model: [@room, @message], local: true do |f| %>
                 <div class="d-flex justify-content-center">
-                    <%= f.text_area :message, placeholder: "メッセージを入力してください", class: "form-control w-50" %>
+                    <%= f.text_area :message, placeholder: "メッセージを入力してください（140文字以内）", class: "form-control w-50", maxlength: 140 %>
                     <%= f.hidden_field :room_id, value: @room.id %>
                     <%= f.submit "メッセージを送信", class: "btn btn-primary ms-2" %>
                 </div>
+                <% if @message.errors.any? %>
+                    <div class="alert alert-danger mt-2 text-center">
+                        <% @message.errors.full_messages.each do |message| %>
+                            <%= message %>
+                        <% end %>
+                    </div>
+                <% end %>
             <% end %>
         </div>
     </div>
