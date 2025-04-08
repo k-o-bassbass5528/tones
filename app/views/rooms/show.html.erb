@@ -27,8 +27,8 @@
         </div>
         <div class="row mt-3">
             <%= form_with model: [@room, @message], local: true do |f| %>
-                <div class="d-flex">
-                    <%= f.text_area :message, placeholder: "メッセージを入力してください", size: 30, class: "form-control" %>
+                <div class="d-flex justify-content-center">
+                    <%= f.text_area :message, placeholder: "メッセージを入力してください", class: "form-control w-50" %>
                     <%= f.hidden_field :room_id, value: @room.id %>
                     <%= f.submit "メッセージを送信", class: "btn btn-primary ms-2" %>
                 </div>
