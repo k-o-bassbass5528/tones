@@ -13,7 +13,7 @@
         <% end %>
         <div class="container d-flex mt-5">
             <div class="d-block">
-                <p class="caption"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none" %></p>
+                <p class="caption"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none text-dark" %></p>
                 <%= attachment_image_tag @post, :image, format: 'jpeg', size: "450x350" %><br>
                 <p class="caption"><%= @post.instrument %>
                     <% if @post.favorited_by?(current_user) %>
