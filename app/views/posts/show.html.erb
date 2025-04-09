@@ -52,6 +52,11 @@
                                     <%= link_to "削除", post_comment_path(comment.post, comment), data: { turbo_method: :delete }, class: "btn-sm btn-danger" %>
                                 </div>
                             <% end %>
+                            <% if @post.user == current_user %>
+                                <div class="comment-delete">
+                                    <%= link_to "削除", post_comment_path(comment.post, comment), data: { turbo_method: :delete , turbo_confirm: "他人のコメントです。本当に削除しますか？"}, class: "btn-sm btn-danger" %>
+                                </div>
+                            <% end %>
                         </div>
                     </div>
                 <% end %>
