@@ -5,7 +5,7 @@
             <div class="content-overlay">
                 <% @entries.each do |e| %>
                     <% if @myUserId != e.user.id %>
-                        <h1 class="text"><%= e.user.name %>さんとのトークルーム</h1>
+                        <h1 class="text"><%= link_to e.user.name, user_path(e.user), class: "text-decoration-none text-dark" %>さんとのトークルーム</h1>
                     <% end %>
                 <% end %>
                 <div class="d-flex justify-content-center">
@@ -36,7 +36,7 @@
                                     <%= attachment_image_tag m.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
                                 </div>
                                 <div class="message-content">
-                                    <p class="user-name mb-1"><%= link_to m.user.name, user_path(m.user), class: "text-decoration-none" %></p>
+                                    <p class="user-name mb-1"><%= m.user.name %></p>
                                     <p class="mb-0"><%= m.message %></p>
                                 </div>
                             </div>
