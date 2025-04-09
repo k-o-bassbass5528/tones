@@ -13,7 +13,7 @@
         <% end %>
         <div class="container d-flex mt-5">
             <div class="d-block">
-                <p class="caption"><%= @post.user.name %></p>
+                <p class="caption"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none" %></p>
                 <%= attachment_image_tag @post, :image, format: 'jpeg', size: "450x350" %><br>
                 <p class="caption"><%= @post.instrument %>
                     <% if @post.favorited_by?(current_user) %>
@@ -43,18 +43,16 @@
                 <p>コメント件数：<%= @comments.count %></p>
                 <% @comments.each do |comment| %>
                     <div class="comments-index mb-2">
-                        <%= comment.user.name %>
+                        <%= link_to user_path(comment.user), class: "user-icon-link" do %>
+                            <%= attachment_image_tag comment.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                        <% end %>
+                        <%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %>
                         <%= comment.created_at.strftime('%Y/%m/%d') %><br>
                         <div class="d-flex">
                             <%= comment.comment %>
-                            <% if comment.user == current_user %>
+                            <% if comment.user == current_user or @post.user == current_user%>
                                 <div class="comment-delete">
-                                    <%= link_to "削除", post_comment_path(comment.post, comment), data: { turbo_method: :delete }, class: "btn-sm btn-danger" %>
-                                </div>
-                            <% end %>
-                            <% if @post.user == current_user %>
-                                <div class="comment-delete">
-                                    <%= link_to "削除", post_comment_path(comment.post, comment), data: { turbo_method: :delete , turbo_confirm: "他人のコメントです。本当に削除しますか？"}, class: "btn-sm btn-danger" %>
+                                    <%= link_to "削除", post_comment_path(comment.post, comment), data: { turbo_method: :delete , turbo_confirm: "本当に削除しますか？"}, class: "btn-sm btn-danger" %>
                                 </div>
                             <% end %>
                         </div>

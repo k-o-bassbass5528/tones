@@ -36,7 +36,7 @@
                                     <%= attachment_image_tag m.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
                                 </div>
                                 <div class="message-content">
-                                    <p class="user-name mb-1"><%= m.user.name %></p>
+                                    <p class="user-name mb-1"><%= link_to m.user.name, user_path(m.user), class: "text-decoration-none" %></p>
                                     <p class="mb-0"><%= m.message %></p>
                                 </div>
                             </div>
