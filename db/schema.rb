@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_04_11_124841) do
+ActiveRecord::Schema[7.1].define(version: 2025_04_11_123801) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -40,12 +40,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_11_124841) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "name"
-  end
-
-  create_table "categories_tables", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,15 +91,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_11_124841) do
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
-  create_table "read_counts", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "instrument_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["instrument_id"], name: "index_read_counts_on_instrument_id"
-    t.index ["user_id"], name: "index_read_counts_on_user_id"
-  end
-
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id", null: false
     t.integer "followed_id", null: false
@@ -150,8 +136,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_11_124841) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "categories"
-  add_foreign_key "read_counts", "instruments"
-  add_foreign_key "read_counts", "users"
   add_foreign_key "relationships", "users", column: "followed_id"
   add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "rooms", "users"
