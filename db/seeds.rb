@@ -7,3 +7,23 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# カテゴリの作成
+categories = [
+    "ギター",
+    "ベース",
+    "ドラム",
+    "ピアノ",
+    "キーボード",
+    "金管楽器",
+    "木管楽器",
+    "弦楽器",
+    "打楽器",
+    "民族楽器",
+    "録音機材",
+    "その他"
+]
+
+categories.each do |name|
+    Category.find_or_create_by(name: name)
+end

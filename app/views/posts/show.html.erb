@@ -25,9 +25,10 @@
                             ♡<%= @post.favorites.count %> いいね
                         <% end %>
                     <% end %>
-                    閲覧数: <%= @post.view_counts.count %>
+                    閲覧数: <%= @post.view_counts.count %><br>
+                    カテゴリ: <%= @post.category.name %><br>
                 </p>
-                <h3>紹介コメント・こだわりポイント</h3>
+                <h4>紹介コメント・こだわりポイント</h4>
                 <p id="text"><%= @post.text %></p>
                 <% if @post.user == current_user %>
                     <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info mr-3" %>
