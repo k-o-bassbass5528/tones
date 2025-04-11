@@ -28,7 +28,7 @@
                     閲覧数: <%= @post.view_counts.count %><br>
                     カテゴリ: <%= @post.category.name %><br>
                 </p>
-                <h4>紹介コメント・こだわりポイント</h4>
+                <h4><b>【紹介コメント・こだわりポイント】</b></h4>
                 <p id="text"><%= @post.text %></p>
                 <% if @post.user == current_user %>
                     <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info mr-3" %>
