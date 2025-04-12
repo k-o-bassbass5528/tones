@@ -34,7 +34,7 @@ h1 {
 
 .caption {
     color: black;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
 }
 
@@ -110,4 +110,27 @@ prev a:hover {
 .introduction-title {
     color: #000080;  // 紺色
     font-weight: bold;
+}
+
+.post-author {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-title {
+    font-size: 22px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    margin: 10px 0;
+}
+
+.post-title + br {
+    display: none;
+}
+
+.post-title + br + .favorite_btn {
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0;
 }
