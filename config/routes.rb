@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:show,:edit,:update]
   end
-  resources :rooms, only: [:create, :show] do
+  resources :rooms, only: [:create, :show, :index] do
     resources :messages, only: [:create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
