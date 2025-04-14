@@ -5,9 +5,8 @@
     <% end %>
 </div>
 <div class="row mt-3 mb-3 align-self-end">
-    <%= form_with method: :get, local: true do |f| %>
-        <%= f.select :category_id, @categories.map { |c| [c.name, c.id] }, { include_blank: 'カテゴリを選択' } %>
-        <%= f.submit 'カテゴリで検索', name: nil %>
+    <%= form_with method: :get, local: true, id: 'category_search_form' do |f| %>
+        <%= f.select :category_id, @categories.map { |c| [c.name, c.id] }, { include_blank: 'カテゴリを選択' }, class: 'category-select' %>
     <% end %>
 </div>
 <div class="row mt-5 index-left w-100">
