@@ -3,28 +3,42 @@
         <div class="row mt-5">
             <h1 class="font-weight-normal">DM一覧</h1>
         </div>
-        <div class="row mt-5 w-100">
+        <div class="row mt-5" style="width: 60%;">
             <% @rooms.each do |room| %>
-                <div class="col-sm-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <% room.entries.each do |entry| %>
-                                <% if entry.user != current_user %>
-                                    <%= link_to user_path(entry.user), class: "text-decoration-none text-dark" do %>
-                                        <div class="d-flex align-items-center">
-                                            <%= attachment_image_tag entry.user, :profile_image, size: '50x50', fallback: "no_image.svg", class: "rounded-circle" %>
-                                            <h5 class="ml-3 mb-0"><%= entry.user.name %></h5>
-                                        </div>
+                <div class="col-12 mb-2">
+                    <%= link_to room_path(room), class: "text-decoration-none" do %>
+                        <div class="card">
+                            <div class="card-body py-3">
+                                <div class="d-flex align-items-center">
+                                    <% room.entries.each do |entry| %>
+                                        <% if entry.user != current_user %>
+                                            <div class="d-flex align-items-center">
+                                                <%= attachment_image_tag entry.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                                                <h5 class="ml-3 mb-0 text-dark"><%= entry.user.name %></h5>
+                                            </div>
+                                        <% end %>
                                     <% end %>
+                                </div>
+                                <% if room.messages.last %>
+                                    <div class="mt-2 text-muted">
+                                        <% if room.messages.last.user == current_user %>
+                                            あなた：
+                                        <% end %>
+                                        <%= truncate(room.messages.last.message, length: 50) %>
+                                        <small class="text-muted">
+                                            (<%= room.messages.last.created_at.strftime('%Y/%m/%d %H:%M') %>)
+                                        </small>
+                                    </div>
                                 <% end %>
-                            <% end %>
-                            <div class="mt-2">
-                                <%= link_to "DMを開く", room_path(room), class: "btn btn-primary" %>
                             </div>
                         </div>
-                    </div>
+                    <% end %>
                 </div>
             <% end %>
         </div>
+        <div class="row mt-3">
+            <%= paginate @rooms %>
+        </div>
     </div>
+</div> 
 </div> 

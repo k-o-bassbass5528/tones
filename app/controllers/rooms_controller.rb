@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @rooms = current_user.rooms
+        @rooms = current_user.rooms.includes(:messages).order('messages.created_at DESC').page(params[:page]).per(5)
     end
 
     def create
