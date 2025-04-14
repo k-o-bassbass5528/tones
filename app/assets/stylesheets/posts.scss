@@ -104,7 +104,9 @@ prev a:hover {
 }
 
 .favorite_btn {
-    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0;
 }
 
 .introduction-title {
@@ -127,10 +129,4 @@ prev a:hover {
 
 .post-title + br {
     display: none;
-}
-
-.post-title + br + .favorite_btn {
-    font-size: 20px;
-    text-decoration: none;
-    margin: 0;
 }

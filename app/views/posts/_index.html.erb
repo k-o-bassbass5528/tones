@@ -4,6 +4,12 @@
         <%= f.submit '検索する', name: nil %>
     <% end %>
 </div>
+<div class="row mt-3 mb-3 align-self-end">
+    <%= form_with method: :get, local: true do |f| %>
+        <%= f.select :category_id, @categories.map { |c| [c.name, c.id] }, { include_blank: 'カテゴリを選択' } %>
+        <%= f.submit 'カテゴリで検索', name: nil %>
+    <% end %>
+</div>
 <div class="row mt-5 index-left w-100">
 <% posts.each do |post| %>
     <div class="one-post col-sm-4 mb-3">
