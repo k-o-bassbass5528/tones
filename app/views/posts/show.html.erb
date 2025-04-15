@@ -16,11 +16,11 @@
                 <p class="caption post-author"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none text-dark" %></p>
                 <div class="d-flex flex-wrap">
                     <% @post.images.each do |image| %>
-                        <div class="mb-3 mr-3">
+                        <div class="mb-3 mr-3" style="margin-right: 5px;">
                             <% if @post.images.count == 1 %>
-                                <%= image_tag image, format: 'jpeg', size: "450x350" %>
+                                <%= image_tag image, format: 'jpeg', size: "650x500" %>
                             <% else %>
-                                <%= image_tag image, format: 'jpeg', size: "300x200" %>
+                                <%= image_tag image, format: 'jpeg', size: "300x220" %>
                             <% end %>
                         </div>
                     <% end %>
