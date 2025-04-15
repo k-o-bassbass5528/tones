@@ -14,7 +14,13 @@
         <div class="container d-flex mt-2">
             <div class="d-block">
                 <p class="caption post-author"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none text-dark" %></p>
-                <%= attachment_image_tag @post, :image, format: 'jpeg', size: "450x350" %><br>
+                <div class="d-flex flex-wrap">
+                    <% @post.images.each do |image| %>
+                        <div class="mb-3 mr-3">
+                            <%= image_tag image, format: 'jpeg', size: "450x350" %>
+                        </div>
+                    <% end %>
+                </div>
                 <p class="caption post-title">【楽器・機材名】<%= @post.instrument %></p>
                 <p class="caption">
                     <% if @post.favorited_by?(current_user) %>

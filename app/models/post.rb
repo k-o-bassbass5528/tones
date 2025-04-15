@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    attachment :image
+    has_many_attached :images
     belongs_to :user
     belongs_to :category
     has_many :comments, dependent: :destroy
@@ -8,11 +8,19 @@ class Post < ApplicationRecord
 
     validates :instrument, presence: true, length: { maximum: 50 }
     validates :text, presence: true, length: { maximum: 150 }
-    validates :image, presence: true
+    validates :images, presence: true
+    validate :validate_image_count
 
     enum status: { published: 0, draft: 1 }
 
     def favorited_by?(user)
         favorites.where(user_id: user.id).exists?
+    end
+
+    private
+    def validate_image_count
+        if images.attached? && images.count > 4
+            errors.add(:images, "は4枚までしか添付できません")
+        end
     end
 end
