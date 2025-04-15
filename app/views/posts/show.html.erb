@@ -15,14 +15,33 @@
             <div class="d-block" style="width: 70%;">
                 <p class="caption post-author"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none text-dark" %></p>
                 <div class="d-flex flex-wrap">
-                    <% @post.images.each do |image| %>
-                        <div class="mb-3 mr-3" style="margin-right: 5px;">
-                            <% if @post.images.count == 1 %>
-                                <%= image_tag image, format: 'jpeg', size: "650x500" %>
-                            <% else %>
-                                <%= image_tag image, format: 'jpeg', size: "300x220" %>
+                    <% if @post.images.count >= 3 %>
+                        <div class="d-flex flex-wrap" style="width: 610px; gap: 5px;">
+                            <div style="width: calc(50% - 2.5px);">
+                                <%= image_tag @post.images.first, format: 'jpeg', size: "300x220", class: "img-fluid" %>
+                            </div>
+                            <div style="width: calc(50% - 2.5px);">
+                                <%= image_tag @post.images.second, format: 'jpeg', size: "300x220", class: "img-fluid" %>
+                            </div>
+                            <div style="width: calc(50% - 2.5px);">
+                                <%= image_tag @post.images.third, format: 'jpeg', size: "300x220", class: "img-fluid" %>
+                            </div>
+                            <% if @post.images.count == 4 %>
+                                <div style="width: calc(50% - 2.5px);">
+                                    <%= image_tag @post.images.fourth, format: 'jpeg', size: "300x220", class: "img-fluid" %>
+                                </div>
                             <% end %>
                         </div>
+                    <% else %>
+                        <% @post.images.each do |image| %>
+                            <div class="mb-3 mr-3" style="margin-right: 5px;">
+                                <% if @post.images.count == 1 %>
+                                    <%= image_tag image, format: 'jpeg', size: "650x500" %>
+                                <% else %>
+                                    <%= image_tag image, format: 'jpeg', size: "300x220" %>
+                                <% end %>
+                            </div>
+                        <% end %>
                     <% end %>
                 </div>
                 <p class="caption post-title">【楽器・機材名】<%= @post.instrument %></p>
