@@ -40,7 +40,7 @@
                     カテゴリ: <%= @post.category.name %><br>
                 </p>
                 <h5 class="introduction-title"><b>【紹介コメント・こだわりポイント】</b></h5>
-                <p id="text"><%= @post.text %></p>
+                <p id="text" style="max-width: 650px;"><%= @post.text %></p>
                 <% if @post.user == current_user %>
                     <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info mr-3" %>
                     <%= link_to '削除する', post_path(@post.id), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}, class: "btn btn-danger" %><br>
