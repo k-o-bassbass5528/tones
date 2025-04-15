@@ -1,49 +1,93 @@
 <div class="cover-show">
     <div class="container d-flex flex-column align-items-center">
-        <div class="row mt-5 mb-2">
+        <div class="row mt-3 mb-2">
             <h1 class="font-weight-normal">投稿詳細</h1>
         </div>
         <% if @comment.errors.any? %>
-            <div class="card text-center text-white bg-danger mt-3">
+            <div class="card text-center text-white bg-danger mb-2">
                 <%= @comment.errors.count %>件のエラーが発生しました
                 <% @comment.errors.full_messages.each do |message| %>
                     <%= message %>
                 <% end %>
             </div>
         <% end %>
-        <div class="container d-flex mt-2">
+        <div class="container d-flex">
             <div class="d-block" style="width: 70%;">
-                <p class="caption post-author"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none text-dark" %></p>
+                <p class="caption post-author mb-2"><%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none text-dark" %></p>
                 <div class="d-flex flex-wrap">
                     <% if @post.images.count >= 3 %>
                         <div class="d-flex flex-wrap" style="width: 610px; gap: 5px;">
-                            <div style="width: calc(50% - 2.5px);">
-                                <%= image_tag @post.images.first, format: 'jpeg', size: "300x220", class: "img-fluid" %>
-                            </div>
-                            <div style="width: calc(50% - 2.5px);">
-                                <%= image_tag @post.images.second, format: 'jpeg', size: "300x220", class: "img-fluid" %>
-                            </div>
-                            <div style="width: calc(50% - 2.5px);">
-                                <%= image_tag @post.images.third, format: 'jpeg', size: "300x220", class: "img-fluid" %>
-                            </div>
-                            <% if @post.images.count == 4 %>
-                                <div style="width: calc(50% - 2.5px);">
-                                    <%= image_tag @post.images.fourth, format: 'jpeg', size: "300x220", class: "img-fluid" %>
+                            <% @post.images.each_with_index do |image, index| %>
+                                <div style="width: calc(50% - 2.5px); cursor: pointer;" onclick="showImageModal(<%= index %>)">
+                                    <%= image_tag image, format: 'jpeg', size: "300x220", class: "img-fluid" %>
                                 </div>
                             <% end %>
                         </div>
                     <% else %>
-                        <% @post.images.each do |image| %>
-                            <div class="mb-3 mr-3" style="margin-right: 5px;">
+                        <% @post.images.each_with_index do |image, index| %>
+                            <div class="mb-3 mr-3" style="margin-right: 5px; cursor: pointer;" onclick="showImageModal(<%= index %>)">
                                 <% if @post.images.count == 1 %>
-                                    <%= image_tag image, format: 'jpeg', size: "650x500" %>
+                                    <%= image_tag image, format: 'jpeg', size: "650x500", class: "img-fluid" %>
                                 <% else %>
-                                    <%= image_tag image, format: 'jpeg', size: "300x220" %>
+                                    <%= image_tag image, format: 'jpeg', size: "300x220", class: "img-fluid" %>
                                 <% end %>
                             </div>
                         <% end %>
                     <% end %>
                 </div>
+
+                <!-- 画像モーダル -->
+                <div id="imageModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 1000; cursor: pointer;" onclick="closeImageModal()">
+                    <div style="position: relative; width: 800px; height: 600px; margin: auto; top: 50%; transform: translateY(-50%);">
+                        <% if @post.images.count > 1 %>
+                            <button onclick="event.stopPropagation(); showPrevImage()" style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: none; border: none; color: white; font-size: 2em; cursor: pointer;">＜</button>
+                            <button onclick="event.stopPropagation(); showNextImage()" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: none; border: none; color: white; font-size: 2em; cursor: pointer;">＞</button>
+                        <% end %>
+                        <img id="modalImage" src="" style="max-width: 100%; max-height: 100%; display: block; margin: auto;">
+                    </div>
+                </div>
+
+                <script>
+                    let currentImageIndex = 0;
+                    const images = <%= @post.images.map { |image| url_for(image) }.to_json.html_safe %>;
+                    console.log('Images:', images); // デバッグ用
+
+                    function showImageModal(index) {
+                        currentImageIndex = index;
+                        const imageUrl = images[index];
+                        console.log('Showing image:', imageUrl); // デバッグ用
+                        document.getElementById('modalImage').src = imageUrl;
+                        document.getElementById('imageModal').style.display = 'block';
+                    }
+
+                    function closeImageModal() {
+                        document.getElementById('imageModal').style.display = 'none';
+                    }
+
+                    function showNextImage() {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        document.getElementById('modalImage').src = images[currentImageIndex];
+                    }
+
+                    function showPrevImage() {
+                        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                        document.getElementById('modalImage').src = images[currentImageIndex];
+                    }
+
+                    // キーボード操作の追加
+                    document.addEventListener('keydown', function(event) {
+                        if (document.getElementById('imageModal').style.display === 'block') {
+                            if (event.key === 'Escape') {
+                                closeImageModal();
+                            } else if (event.key === 'ArrowLeft') {
+                                showPrevImage();
+                            } else if (event.key === 'ArrowRight') {
+                                showNextImage();
+                            }
+                        }
+                    });
+                </script>
+
                 <p class="caption post-title">【楽器・機材名】<%= @post.instrument %></p>
                 <p class="caption">
                     <% if @post.favorited_by?(current_user) %>
