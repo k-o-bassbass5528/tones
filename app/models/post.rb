@@ -6,8 +6,8 @@ class Post < ApplicationRecord
     has_many :favorites, dependent: :destroy
     has_many :view_counts, dependent: :destroy
 
-    validates :instrument, presence: true, length: { maximum: 50 }
-    validates :text, presence: true, length: { maximum: 150 }
+    validates :instrument, presence: true, length: { maximum: 60 }
+    validates :text, presence: true, length: { maximum: 200 }
     validates :images, presence: true
     validate :validate_image_count
 

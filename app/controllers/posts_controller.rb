@@ -51,6 +51,10 @@ class PostsController < ApplicationController
         render :edit, status: :unprocessable_entity
       end
     end
+    # 画像を削除する場合の処理
+    if params[:post][:images_to_remove]
+      @post.images.purge
+    end
   end
 
   def destroy

@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
     def show
         @room = Room.find(params[:id])
         if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
-            @messages = @room.messages
+            @messages = @room.messages.page(params[:page]).per(7).reverse_order
             @message = Message.new
             @entries = @room.entries
             @myUserId = current_user.id
