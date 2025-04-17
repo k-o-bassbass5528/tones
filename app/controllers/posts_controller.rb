@@ -16,10 +16,21 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.published.page(params[:page]).reverse_order
-    @posts = @posts.where('instrument LIKE ?', "%#{params[:search]}%") if params[:search].present?
-    @posts = @posts.where(category_id: params[:category_id]) if params[:category_id].present?
-    @categories = Category.all
-  end
+  
+    # フリーワード検索
+    if params[:search].present?
+      @posts = @posts.where('instrument LIKE ?', "%#{params[:search]}%")
+    end
+  
+    # カテゴリ検索（"全て"はID=0として無視）
+    if params[:category_id].present? && params[:category_id].to_i != 0
+      @posts = @posts.where(category_id: params[:category_id])
+    end
+  
+    # カテゴリ一覧（検索時は"全て"も含める）
+    @categories = Category.all.to_a
+    @categories.unshift(Category.new(id: 0, name: "全て"))
+  end  
 
   def show
     @post = Post.find(params[:id])
@@ -65,10 +76,22 @@ class PostsController < ApplicationController
 
   def confirm
     @posts = current_user.posts.draft.page(params[:page]).reverse_order
-    @posts = @posts.where('instrument LIKE ?', "%#{params[:search]}%") if params[:search].present?
-    @posts = @posts.where(category_id: params[:category_id]) if params[:category_id].present?
-    @categories = Category.all
+  
+    # フリーワード検索
+    if params[:search].present?
+      @posts = @posts.where('instrument LIKE ?', "%#{params[:search]}%")
+    end
+  
+    # カテゴリ検索（"全て"はID=0として無視）
+    if params[:category_id].present? && params[:category_id].to_i != 0
+      @posts = @posts.where(category_id: params[:category_id])
+    end
+  
+    # カテゴリ一覧（検索フォーム用に"全て"を追加）
+    @categories = Category.all.to_a
+    @categories.unshift(Category.new(id: 0, name: "全て"))
   end
+  
 
   private
   def post_params

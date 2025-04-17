@@ -10,7 +10,7 @@
 <div class="row mb-2 align-self-end">
     <%= form_with method: :get, local: true, id: 'category_search_form' do |f| %>
         <%= f.select :category_id, @categories.map { |c| [c.name, c.id] }, { include_blank: 'カテゴリを選択' }, class: 'category-select' %>
-        <% if params[:category_id].present? %>
+        <% if params[:category_id].present? && params[:category_id].to_i != 0 %>
             <br><%= 'カテゴリ検索結果がありません' %>
         <% end %>
     <% end %>
