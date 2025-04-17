@@ -122,7 +122,7 @@
                             <%= attachment_image_tag comment.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
                         <% end %>
                         <%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %>
-                        <%= comment.created_at.strftime('%Y/%m/%d') %><br>
+                        <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %><br>
                         <div class="d-flex">
                             <%= comment.comment %>
                         </div>

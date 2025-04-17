@@ -87,3 +87,5 @@ gem 'devise-i18n', '1.12.1'
 
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
+gem 'rails-i18n'
