@@ -64,6 +64,9 @@
                                     <% if post.images.attached? %>
                                         <%= image_tag post.images.first, format: 'jpeg', size: "300x200", class: "img-fluid" %>
                                     <% end %>
+                                    <% if post.status == "draft" %>
+                                        <span class="text-muted">下書き</span>
+                                    <% end %>
                                 <% end %>
                             </div>
                         </div>
