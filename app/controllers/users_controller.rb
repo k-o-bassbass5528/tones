@@ -20,7 +20,9 @@ class UsersController < ApplicationController
 
     if @user.id == current_user.id
       # 自分のプロフィールページの場合の処理
+      @posts = @user.posts.page(params[:page]).per(8).reverse_order
     else
+      @posts = @user.posts.page(params[:page]).per(8).reverse_order.where(status: "published")
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
           if cu.room_id == u.room_id

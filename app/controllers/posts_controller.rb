@@ -65,6 +65,9 @@ class PostsController < ApplicationController
 
   def confirm
     @posts = current_user.posts.draft.page(params[:page]).reverse_order
+    @posts = @posts.where('instrument LIKE ?', "%#{params[:search]}%") if params[:search].present?
+    @posts = @posts.where(category_id: params[:category_id]) if params[:category_id].present?
+    @categories = Category.all
   end
 
   private
