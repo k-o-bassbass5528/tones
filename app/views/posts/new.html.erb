@@ -7,7 +7,7 @@
             <div class="card text-center text-white bg-danger mt-3">
                 <%= @post.errors.count %>件のエラーが発生しました
                 <% @post.errors.full_messages.each do |message| %>
-                    <%= message %>
+                    <div><%= message %></div>
                 <% end %>
             </div>
         <% end %>

@@ -1,10 +1,13 @@
 ja:
   activerecord:
-    models:
-      post: 投稿
     attributes:
       post:
-        title: タイトル
-        content: 内容
-        image: 画像
+        instrument: 楽器名
+        text: 紹介コメント・こだわりポイント
+        images: 画像
         category: カテゴリ
+
+  errors:
+    format: "%{attribute}%{message}"  # これがデフォルト。これを明示してみる。
+    messages:
+      blank: "を入力してください"
