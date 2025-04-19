@@ -4,7 +4,7 @@
             <h1 class="font-weight-normal">新規投稿</h1>
         </div>
         <% if @post.errors.any? %>
-            <div class="card text-center text-white bg-danger mt-3" style="width: 30rem;">
+            <div class="card text-center text-white bg-danger mt-3" style="width: 27rem;">
                 <%= @post.errors.count %>件のエラーが発生しました
                 <% @post.errors.full_messages.each do |message| %>
                     <div><%= message %></div>
