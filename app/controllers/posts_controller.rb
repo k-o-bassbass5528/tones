@@ -92,6 +92,10 @@ class PostsController < ApplicationController
     @categories.unshift(Category.new(id: 0, name: "全て"))
   end
   
+  def image_urls
+    post = Post.find(params[:id])
+    render json: post.images.map { |img| url_for(img) }
+  end
 
   private
   def post_params

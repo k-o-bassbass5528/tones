@@ -37,7 +37,7 @@
                 </div>
 
                 <!-- 画像モーダル -->
-                <div id="imageModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 1000; cursor: pointer;" onclick="closeImageModal()">
+                <div id="imageModal" data-post-id="<%= @post.id %>" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 1000; cursor: pointer;" onclick="closeImageModal()">
                     <div style="position: relative; width: 800px; height: 600px; margin: auto; top: 50%; transform: translateY(-50%);">
                         <% if @post.images.count > 1 %>
                             <button onclick="event.stopPropagation(); showPrevImage()" style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: none; border: none; color: white; font-size: 2em; cursor: pointer;">＜</button>
@@ -49,11 +49,17 @@
 
                 <script>
                     let currentImageIndex = 0;
-                    const images = <%= @post.images.map { |image| url_for(image) }.to_json.html_safe %>;
-                    console.log('Images:', images); // デバッグ用
+                    let images = [];
 
-                    function showImageModal(index) {
-                        currentImageIndex = index;
+                async function fetchImages() {
+                    const postId = document.getElementById("imageModal").dataset.postId;
+                    const response = await fetch(`/posts/${postId}/image_urls`);
+                    images = await response.json();
+                }
+
+                async function showImageModal(index) {
+                    await fetchImages(); // 最新の画像リスト取得！
+                    currentImageIndex = index;
                         const imageUrl = images[index];
                         console.log('Showing image:', imageUrl); // デバッグ用
                         document.getElementById('modalImage').src = imageUrl;
@@ -64,14 +70,16 @@
                         document.getElementById('imageModal').style.display = 'none';
                     }
 
-                    function showNextImage() {
+                    async function showNextImage() {
+                        await fetchImages(); // 最新リスト取得してから使う
                         currentImageIndex = (currentImageIndex + 1) % images.length;
-                        document.getElementById('modalImage').src = images[currentImageIndex];
+                        document.getElementById('modalImage').src = images[currentImageIndex] + '?t=' + new Date().getTime();
                     }
 
-                    function showPrevImage() {
+                    async function showPrevImage() {
+                        await fetchImages(); // 同上
                         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-                        document.getElementById('modalImage').src = images[currentImageIndex];
+                        document.getElementById('modalImage').src = images[currentImageIndex] + '?t=' + new Date().getTime();
                     }
 
                     // キーボード操作の追加

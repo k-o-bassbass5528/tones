@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root :to => 'homes#top'
+
+  get 'posts/:id/image_urls', to: 'posts#image_urls'
 end
