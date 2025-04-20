@@ -54,6 +54,10 @@ class UsersController < ApplicationController
     @users = user.follower_user.page(params[:page]).per(5).reverse_order
   end
 
+  def destroy
+    
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :profile, :profile_image)
