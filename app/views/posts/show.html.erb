@@ -118,9 +118,9 @@
                 <% end %>
                 <%= link_to '投稿一覧ページへ', posts_path, class: "btn btn-dark mt-3 "%>
             </div>
-            <div class="comments ml-5 mt-5" style="width: 40%;">
+            <div class="comments ml-5 mt-5" style="width: 50%;">
                 <%= form_with(model:[@post, @comment], local: true) do |f| %> 
-                    <%= f.text_area :comment, :size=>"40x3", placeholder: "コメントする", style: "width: 100%;" %>
+                    <%= f.text_area :comment, :size=>"50x3", placeholder: "コメントする", style: "width: 100%;" %>
                     <%= f.submit "送信する", class: "btn btn-success mb-4" %>
                 <% end %>
                 <p>コメント件数：<%= @comments.count %></p>
@@ -131,7 +131,7 @@
                         <% end %>
                         <%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %>
                         <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %><br>
-                        <div class="d-flex">
+                        <div class="d-flex mb-4">
                             <%= comment.comment %>
                         </div>
                         <% if comment.user == current_user or @post.user == current_user%>
