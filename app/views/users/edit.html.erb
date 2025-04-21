@@ -19,6 +19,7 @@
                     <%= f.text_field :profile, class: "form-control" %><br>
                 </div>
                 <%= f.submit '保存する', class: "btn btn-success" %>
+                <%= link_to '退会する', user_path(current_user.id), data: { turbo_method: :delete, turbo_confirm: "退会すると、すべての投稿やコメント等が削除され、この操作は取り消せません。本当に退会しますか？"}, class: "btn btn-danger" %><br>
             <% end %>
         </div>
     </div>
