@@ -7,7 +7,6 @@
 <div class="row mb-2 align-self-end">
     <%= form_with method: :get, local: true, id: 'category_search_form' do |f| %>
         <%= f.select :category_id, @categories.map { |c| [c.name, c.id] }, { include_blank: 'カテゴリを選択' }, class: 'category-select' %>
-
     <% end %>
 </div>
 <% if params[:search].present? %>
@@ -28,7 +27,7 @@
                     </div>
                     <div class="mb-1 d-flex justify-content-center">
                         <% if post.images.attached? %>
-                            <%= image_tag post.images.first, format: 'jpeg', size: "200x120", class: "img-fluid" %>
+                            <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb" %>
                         <% end %>
                     </div>
                     <p class="caption mb-0 small"><%= post.instrument %></p>

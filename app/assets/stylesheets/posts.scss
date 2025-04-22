@@ -140,3 +140,10 @@ prev a:hover {
     border-radius: 4px;
     background-color: white;
 }
+
+.image-thumb {
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: cover;
+    object-position: center;
+  }
