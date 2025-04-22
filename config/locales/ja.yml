@@ -8,6 +8,6 @@ ja:
         category: カテゴリ
 
   errors:
-    format: "%{attribute}%{message}"  # これがデフォルト。これを明示してみる。
+    format: "%{attribute}%{message}"
     messages:
       blank: "を入力してください"

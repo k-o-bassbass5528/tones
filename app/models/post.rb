@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
     validates :instrument, presence: true, length: { maximum: 60 }
     validates :text, presence: true, length: { maximum: 200 }
-    validates :images, presence: true
+    validates :images, presence: true, on: :create
     belongs_to :category
     validate :validate_image_count
 
@@ -15,6 +15,11 @@ class Post < ApplicationRecord
 
     def favorited_by?(user)
         favorites.where(user_id: user.id).exists?
+    end
+
+    def images=(attachables)
+        return if attachables == [""] || attachables.blank?
+        super
     end
 
     private

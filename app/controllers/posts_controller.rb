@@ -47,26 +47,25 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+  
+    # 新しい画像があるか確認（ないなら無視）
     if params[:post][:images].present?
-      # 新しい画像が追加された場合のみ、既存の画像を保持
       if @post.update(post_params)
         redirect_to post_path(@post.id)
       else
         render :edit, status: :unprocessable_entity
       end
     else
-      # 画像が変更されていない場合は、画像パラメータを除外して更新
+      # 画像フィールド空のままなら、画像以外だけ更新
       if @post.update(post_params.except(:images))
         redirect_to post_path(@post.id)
       else
         render :edit, status: :unprocessable_entity
       end
     end
-    # 画像を削除する場合の処理
-    if params[:post][:images_to_remove]
-      @post.images.purge
-    end
   end
+  
+  
 
   def destroy
     post = Post.find(params[:id])
