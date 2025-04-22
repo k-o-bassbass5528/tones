@@ -28,3 +28,15 @@
 .profile {
     padding: 15px;
 }
+
+.image-thumb {
+    max-width: 300px;
+    max-height: 165px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.draft-card {
+    background-color: #cccccc !important;
+    color: #212529;
+}  

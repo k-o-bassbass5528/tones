@@ -52,7 +52,7 @@
         <div class="row mt-5 index-left w-100">
             <% @posts.each do |post| %>
                 <div class="one-post col-sm-3 mb-3">
-                    <div class="card">
+                    <div class="card <%= 'draft-card' if post.status != 'published' %>">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <%= link_to user_path(post.user), class: "text-decoration-none" do %>
@@ -61,9 +61,7 @@
                             </div>
                             <div class="mt-3">
                                 <%= link_to post_path(post) do %>
-                                    <% if post.images.attached? %>
-                                        <%= image_tag post.images.first, format: 'jpeg', size: "300x200", class: "img-fluid" %>
-                                    <% end %>
+                                    <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb mx-auto d-block" %>
                                     <% if post.status == "published" %>
                                         <span class="text-muted">公開中</span>
                                     <% else %>
