@@ -15,11 +15,11 @@
             <%= form_with model: @post, local:true do |f| %>
                 <div class="form-group mb-3">
                     <label class="form-label">【楽器名】</label>
-                    <%= f.text_field :instrument, class: "form-control" %>
+                    <%= f.text_field :instrument, placeholder: "楽器名を入力してください(60文字以内)", class: "form-control", maxlength: 60 %>
                 </div>
                 <div class="form-group mb-3">
                     <label class="form-label">【紹介コメント・こだわりポイント】</label>
-                    <%= f.text_area :text, rows: 10, class: "form-control" %>
+                    <%= f.text_area :text, rows: 10, placeholder: "コメントを入力してください(200文字以内)", class: "form-control" , maxlength: 200 %>
                 </div>
                 <div class="form-group mb-3">
                     <label class="form-label">【画像】</label><br>

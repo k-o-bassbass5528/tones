@@ -158,9 +158,11 @@ prev a:hover {
 
 .preview-image {
     max-height: 220px;
+    max-width: 100%;
     height: auto;
     width: auto;
     object-fit: contain;
+    display: block;
 }
 
 .single-image-limit {
