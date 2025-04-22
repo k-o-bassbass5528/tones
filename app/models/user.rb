@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 20 }
 
   # ユーザーをフォローする
   def follow(user_id)

@@ -146,4 +146,12 @@ prev a:hover {
     max-height: 160px;
     object-fit: cover;
     object-position: center;
-  }
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%; 
+}

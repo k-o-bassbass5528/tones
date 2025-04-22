@@ -39,4 +39,20 @@
 .draft-card {
     background-color: #cccccc !important;
     color: #212529;
-}  
+}
+
+.card .card-body {
+    padding: 0.5rem !important;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
+    display: inline-block;
+}
+
+.card .caption {
+    max-width: 400px;
+}

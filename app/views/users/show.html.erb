@@ -56,10 +56,10 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <%= link_to user_path(post.user), class: "text-decoration-none" do %>
-                                    <span class="ml-2 text-dark"><%= post.instrument %></span>
+                                    <span class="ml-2 text-dark ellipsis"><%= post.instrument %></span>
                                 <% end %>
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-1">
                                 <%= link_to post_path(post) do %>
                                     <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb mx-auto d-block" %>
                                     <% if post.status == "published" %>

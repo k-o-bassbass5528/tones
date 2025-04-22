@@ -26,11 +26,9 @@
                         <span class="ml-2 small"><%= post.user.name %></span>
                     </div>
                     <div class="mb-1 d-flex justify-content-center">
-                        <% if post.images.attached? %>
-                            <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb" %>
-                        <% end %>
+                        <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb" %>
                     </div>
-                    <p class="caption mb-0 small"><%= post.instrument %></p>
+                    <p class="caption mb-0 small ellipsis"><%= post.instrument %></p>
                     <p class="caption mb-0 small text-muted">
                         <%= "#{post.comments.count}コメント " %><%= " 閲覧数:#{post.view_counts.count}" %>
                     </p>

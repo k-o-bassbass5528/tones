@@ -6,7 +6,7 @@
       <h1>新規登録</h1>
       <div class="box-name">
         <%= f.label :name, "名前" %><br />
-        <%= f.text_field :name, autofocus: true %>
+        <%= f.text_field :name, placeholder: "20文字以内", autofocus: true , maxlength: 20 %>
       </div>
 
       <div class="box-email">

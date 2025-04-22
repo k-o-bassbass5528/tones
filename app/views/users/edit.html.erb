@@ -7,7 +7,7 @@
             <%= form_with model: @user, local:true do |f| %>
                 <div class="form-group">
                     <label class="form-label">名前</label>
-                    <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", class: "form-control" %>
+                    <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前(20文字以下)", class: "form-control", maxlength: 20 %>
                 </div>
                 <div class="form-group">
                     <label class="form-label">プロフィール画像</label><br>
