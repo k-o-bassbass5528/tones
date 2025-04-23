@@ -18,23 +18,31 @@
 <div class="row index-left w-100">
 <% posts.each do |post| %>
     <div class="one-post col-sm-3 mb-3">
-        <div class="card h-100">
-            <%= link_to post_path(post), class: "text-decoration-none text-dark" do %>
-                <div class="card-body p-2">
-                    <div class="d-flex align-items-center mb-1">
-                        <%= attachment_image_tag post.user, :profile_image, size: '25x25', fallback: "no_image.svg", class: "rounded-circle" %>
-                        <span class="ml-2 small"><%= post.user.name %></span>
+        <%= link_to post_path(post), class: "text-decoration-none text-dark" do %>
+            <div class="card h-100 d-flex flex-column justify-content-between">
+                <div class="card-body p-2 d-flex flex-column justify-content-between">
+
+                    <!-- 上部：ユーザー名＋画像 -->
+                    <div>
+                        <div class="d-flex align-items-center mb-1">
+                            <%= attachment_image_tag post.user, :profile_image, size: '25x25', fallback: "no_image.svg", class: "rounded-circle" %>
+                            <span class="ml-2 small ellipsis"><%= post.user.name %></span>
+                        </div>
+                        <div class="mb-1 d-flex justify-content-center">
+                            <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb" %>
+                        </div>
                     </div>
-                    <div class="mb-1 d-flex justify-content-center">
-                        <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb" %>
+
+                    <!-- 下部：タイトルとコメント数 -->
+                    <div>
+                        <p class="caption mb-0 small ellipsis"><%= post.instrument %></p>
+                        <p class="caption mb-0 small text-muted">
+                            <%= "#{post.comments.count}コメント " %><%= " 閲覧数:#{post.view_counts.count}" %>
+                        </p>
                     </div>
-                    <p class="caption mb-0 small ellipsis"><%= post.instrument %></p>
-                    <p class="caption mb-0 small text-muted">
-                        <%= "#{post.comments.count}コメント " %><%= " 閲覧数:#{post.view_counts.count}" %>
-                    </p>
                 </div>
-            <% end %>
-        </div>
+            </div>
+        <% end %>
     </div>
 <% end %>
 </div>

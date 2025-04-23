@@ -53,13 +53,15 @@
             <% @posts.each do |post| %>
                 <div class="one-post col-sm-3 mb-3">
                     <%= link_to post_path(post), class: "text-decoration-none" do %>
-                        <div class="card <%= 'draft-card' if post.draft? %> h-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
+                        <div class="card <%= 'draft-card' if post.draft? %> h-100 d-flex flex-column justify-content-between">
+                            <div class="card-body p-2 d-flex flex-column justify-content-between">
+                                <div class="d-flex align-items-center mb-1">
                                     <span class="ml-2 text-dark ellipsis"><%= post.instrument %></span>
                                 </div>
-                                <div class="mt-1">
-                                    <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb mx-auto d-block" %>
+                                <div class="mb-1 d-flex justify-content-center">
+                                    <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb" %>
+                                </div>
+                                <div>
                                     <span class="text-muted">
                                         <%= post.published? ? "公開中" : "下書き" %>
                                     </span>
