@@ -12,6 +12,7 @@ class Post < ApplicationRecord
     validate :validate_image_count
 
     enum status: { published: 0, draft: 1 }
+    scope :published, -> { where(status: :published) }
 
     def favorited_by?(user)
         favorites.where(user_id: user.id).exists?

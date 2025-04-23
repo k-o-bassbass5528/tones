@@ -53,7 +53,7 @@
             <% @posts.each do |post| %>
                 <div class="one-post col-sm-3 mb-3">
                     <%= link_to post_path(post), class: "text-decoration-none" do %>
-                        <div class="card <%= 'draft-card' if post.status != 'published' %> h-100">
+                        <div class="card <%= 'draft-card' if post.draft? %> h-100">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <span class="ml-2 text-dark ellipsis"><%= post.instrument %></span>
@@ -61,7 +61,7 @@
                                 <div class="mt-1">
                                     <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb mx-auto d-block" %>
                                     <span class="text-muted">
-                                        <%= post.status == "published" ? "公開中" : "下書き" %>
+                                        <%= post.published? ? "公開中" : "下書き" %>
                                     </span>
                                 </div>
                             </div>
