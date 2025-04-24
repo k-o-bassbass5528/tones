@@ -23,7 +23,11 @@
                         <div class="message-container my-message">
                             <div class="d-flex justify-content-end align-items-center">
                                 <div class="message-content">
-                                    <p class="mb-0"><%= m.message %></p>
+                                    <p class="mb-0"><%= m.message %>
+                                        <span class="text-white-50 ms-2 small">
+                                            <%= m.created_at.strftime('%Y/%m/%d %H:%M') %>
+                                        </span>
+                                    </p>
                                 </div>
                                 <div class="user-icon ms-2">
                                     <%= attachment_image_tag m.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
@@ -38,7 +42,11 @@
                                 </div>
                                 <div class="message-content">
                                     <p class="user-name mb-1"><%= m.user.name %></p>
-                                    <p class="mb-0"><%= m.message %></p>
+                                    <p class="mb-0"><%= m.message %>
+                                        <span class="text-muted ms-2 small">
+                                            <%= m.created_at.strftime('%Y/%m/%d %H:%M') %>
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
