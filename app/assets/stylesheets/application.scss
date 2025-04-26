@@ -29,25 +29,20 @@ body {
 
 header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: black;
+    padding: 5px 20px;
+    height: 30px; 
 }
 
-header div:first-child {
-    margin-right: auto;
-    font-size: 25px;
+header > div {
+    display: flex;
+    align-items: center;
 }
 
-header div:last-child {
-    margin-right: 30px;
-}
-
-header div {
-    margin-left: 30px;
-    line-height: 30px;
-}
-
-a:hover {
-    color:aqua!important;
+header > div > div {
+    margin-left: 20px;
 }
 
 #head-top {
@@ -55,19 +50,41 @@ a:hover {
     font-size: 25px;
 }
 
+#head-top {
+    font-size: 22px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+  
+.profile-link {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+  
+.profile-link:hover {
+    box-shadow: 0 0 0 2px aqua;
+}
+  
 .nav-link {
     text-decoration: none;
+    margin-left: 20px;
 }
-
-a {
-    text-decoration: none;
-}
-
+  
 a:hover {
-    color: aqua!important;
+    color: aqua !important;
     text-decoration: underline;
 }
-
+  
+a.nav-link:hover {
+    text-decoration: underline;
+}
+  
+a#head-top:hover {
+    text-decoration: underline;
+}
+  
 .profile-img {
     border-radius: 50%;
 }
