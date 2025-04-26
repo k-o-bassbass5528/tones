@@ -24,9 +24,9 @@
                                         <% if room.messages.last.user == current_user %>
                                             あなた：
                                         <% end %>
-                                        <%= truncate(room.messages.last.message, length: 50) %>
+                                        <%= truncate(room.messages.first.message, length: 50) %>
                                         <small class="text-muted">
-                                            (<%= room.messages.last.created_at.strftime('%Y/%m/%d %H:%M') %>)
+                                            (<%= room.messages.first.created_at.strftime('%Y/%m/%d %H:%M') %>)
                                         </small>
                                     </div>
                                 <% end %>
