@@ -9,10 +9,10 @@
         <%= f.select :category_id, @categories.map { |c| [c.name, c.id] }, { include_blank: 'カテゴリを選択' }, class: 'category-select' %>
     <% end %>
 </div>
-<% if params[:search].present? %>
+<% if params[:search].present? && @posts.blank?  %>
     <h4><%= '検索結果がありません' %></h4>
 <% end %>
-<% if params[:category_id].present? && params[:category_id].to_i != 0 %>
+<% if params[:category_id].present? && params[:category_id].to_i != 0 && @posts.blank? %>
     <h4><%= 'カテゴリ検索結果がありません' %></h4>
 <% end %>
 <div class="row index-left w-100">
