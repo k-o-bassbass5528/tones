@@ -169,4 +169,7 @@ prev a:hover {
     max-height: 500px;
     width: auto;
 }
-  
+
+.rounded-circle:hover {
+    box-shadow: 0 0 0 2px aqua;
+}
