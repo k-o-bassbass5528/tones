@@ -9,13 +9,13 @@ class RoomsController < ApplicationController
         @room = Room.create(user_id: current_user.id)
         @entry1 = Entry.create(room_id: @room.id, user_id: current_user.id)
         @entry2 = Entry.create(entry_params)
-        redirect_to room_path(@room.id)
+        redirect_to room_path(@room.id, page: 1)
     end
 
     def show
         @room = Room.find(params[:id])
         if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
-            @messages = @room.messages.page(params[:page]).per(7).reverse_order
+            @messages = @room.messages.order(created_at: :desc).page(params[:page]).per(7)
             @message = Message.new
             @entries = @room.entries
             @myUserId = current_user.id

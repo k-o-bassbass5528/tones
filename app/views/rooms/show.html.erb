@@ -5,7 +5,7 @@
             <div class="content-overlay">
                 <% @entries.each do |e| %>
                     <% if @myUserId != e.user.id %>
-                        <h1 class="text"><%= link_to e.user.name, user_path(e.user), class: "text-decoration-none text-dark" %>さんとのトークルーム</h1>
+                        <h2 class="text"><%= link_to e.user.name, user_path(e.user), class: "text-decoration-none text-dark" %>さんとのトークルーム</h2>
                     <% end %>
                 <% end %>
                 <div class="d-flex justify-content-center">
@@ -18,7 +18,7 @@
     <div class="container mt-5">
         <div class="row">
             <% if @messages.present? %>
-                <% @messages.each do |m| %>
+                <% @messages.reverse_each do |m| %>
                     <% if @myUserId == m.user.id %>
                         <div class="message-container my-message">
                             <div class="d-flex justify-content-end align-items-center">
