@@ -56,3 +56,8 @@
 .card .caption {
     max-width: 650px;
 }
+
+.rounded-circle {
+    border-radius: 50%;
+    object-fit: cover;
+}

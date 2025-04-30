@@ -13,7 +13,7 @@
                                     <% room.entries.each do |entry| %>
                                         <% if entry.user != current_user %>
                                             <div class="d-flex align-items-center">
-                                                <%= attachment_image_tag entry.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                                                <%= profile_image_for(entry.user, size: "40x40", css_class: "mb-3") %>
                                                 <h5 class="ml-3 mb-0 text-dark"><%= entry.user.name %></h5>
                                             </div>
                                         <% end %>

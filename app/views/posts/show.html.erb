@@ -15,7 +15,7 @@
             <div class="d-block" style="width: 70%;">
                 <p class="caption post-author mb-2 d-flex align-items-center">
                     <%= link_to user_path(@post.user) do %>
-                        <%= attachment_image_tag @post.user, :profile_image, size: '37x37', fallback: "no_image.svg", class: "rounded-circle me-2" %> 
+                        <%= profile_image_for(@user, size: "37x37", css_class: "me-2") %> 
                     <% end %>   
                     <%= link_to @post.user.name, user_path(@post.user), class: "text-decoration-none text-dark mb-0" %>
                 </p>
@@ -132,7 +132,7 @@
                 <% @comments.each do |comment| %>
                     <div class="comments-index mb-2 position-relative">
                         <%= link_to user_path(comment.user), class: "user-icon-link text-decoration-none" do %>
-                            <%= attachment_image_tag comment.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                           <%= profile_image_for(@user, size: "40x40") %>
                         <% end %>
                         <%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %>
                         <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %><br>

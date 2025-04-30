@@ -11,7 +11,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">プロフィール画像</label><br>
-                    <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback:"no_image.svg", class: "mb-3 profile-img" %><br>
+                    <%= profile_image_for(@user, size: "100x100", css_class: "mb-3 profile-img") %><br>
                     <%= f.file_field :profile_image %>
                 </div>
                 <div class="form-group">

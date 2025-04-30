@@ -30,7 +30,7 @@
                                     </p>
                                 </div>
                                 <div class="user-icon ms-2">
-                                    <%= attachment_image_tag m.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                                    <%= profile_image_for(m.user, size: "40x40") %>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                         <div class="message-container other-message">
                             <div class="d-flex align-items-center">
                                 <div class="user-icon me-2">
-                                    <%= attachment_image_tag m.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "rounded-circle" %>
+                                    <%= profile_image_for(current_user, size: "40x40") %>
                                 </div>
                                 <div class="message-content">
                                     <p class="user-name mb-1"><%= m.user.name %></p>

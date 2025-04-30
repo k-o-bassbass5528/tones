@@ -16,7 +16,17 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :rooms, through: :entries
 
-  attachment :profile_image
+
+  has_one_attached :profile_image
+  
+  # 画像のリサイズと切り抜き（中央から正方形）
+  def display_profile_image
+    return unless profile_image.attached?
+  
+    profile_image.variant(
+      resize_to_fill: [250, 250]
+    ).processed
+  end
 
   validates :name, presence: true, length: { maximum: 20 }
 
