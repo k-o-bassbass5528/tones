@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">プロフィール</label>
-                    <%= f.text_field :profile, class: "form-control" %><br>
+                    <%= f.text_area :profile, autofocus: true, id:"inputProfile", placeholder:"プロフィール(200文字以下)", class: "form-control", maxlength: 200 %><br>
                 </div>
                 <%= f.submit '保存する', class: "btn btn-success" %>
                 <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？"}, class: "btn btn-warning" %>

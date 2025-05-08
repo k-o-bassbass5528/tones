@@ -61,3 +61,11 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%; 
+}

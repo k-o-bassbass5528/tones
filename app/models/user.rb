@@ -30,6 +30,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
 
+  validates :profile, presence: true, length: { maximum: 200 }
+
   # ユーザーをフォローする
   def follow(user_id)
     follower.create(followed_id: user_id)
