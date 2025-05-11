@@ -17,10 +17,15 @@
 
 html,
 body {
-    width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
+    background-image: url(/assets/top_kari.JPG);
+    background-color:rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 任意。スクロール時の固定感を出すならあり */
 }
 
 .profiler-results {
