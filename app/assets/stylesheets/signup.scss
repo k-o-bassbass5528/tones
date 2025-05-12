@@ -8,7 +8,6 @@
     min-height: 100vh;
     width: 100%;
     height: 100%;
-    padding-top: 70px;
     background: linear-gradient(to right, rgba(13, 128, 214, 0.42), rgba(0, 107, 139, 0.12));
     display: flex;
     justify-content: center;
@@ -131,4 +130,8 @@ h1 {
 
 .box-newusr a:hover {
     background: #e7e9ec;
+}
+
+html, body {
+    height: 100%;
 }
