@@ -122,3 +122,13 @@ a#head-top:hover {
     margin-left: 200px;
     padding: 20px;
 }
+
+.simple-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(13, 128, 214, 0.42), rgba(0, 107, 139, 0.12));
+    padding: 40px 16px;
+}
+  
