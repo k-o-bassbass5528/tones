@@ -19,27 +19,9 @@
     display: none;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    padding: 5px 20px;
-    height: 30px; 
-}
-
-header > div {
-    display: flex;
-    align-items: center;
-}
-
-header > div > div {
-    margin-left: 20px;
-}
-
 #head-top {
     text-decoration: none;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 #head-top {
@@ -109,7 +91,6 @@ a#head-top:hover {
 
 .main-content {
     margin-left: 200px;
-    padding: 20px;
 }
 
 .simple-layout {
