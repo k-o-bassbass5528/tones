@@ -18,7 +18,9 @@
           <%= link_to user_path(current_user.id), class: "profile-link d-block mb-3" do %>
             <%= profile_image_for(current_user, size: "50x50") %>
           <% end %>
-          <%= link_to "tones", posts_path, id: "head-top", class: "text-white d-block mb-4" %>
+          <%= link_to posts_path, id: "head-top", class: "d-block mb-4" do %>
+            <%= image_tag 'tones_big_logo.jpg', size: "120x25" %>
+          <% end %>
         </div>
 
         <!-- 下部：各種リンク -->
