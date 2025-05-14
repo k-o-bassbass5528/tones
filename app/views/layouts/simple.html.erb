@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true %>
   </head>
 
-  <body class="simple-layout top-page">
+  <body class="<%= content_for?(:body_class) ? yield(:body_class) : '' %>">
     <%= yield %>
   </body>
 </html>
