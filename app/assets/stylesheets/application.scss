@@ -15,17 +15,6 @@
  */
  @import "bootstrap";
 
-html,
-body.top-background {
-    background-image: url(/assets/top_kari.JPG);
-    background-color:rgba(255,255,255,0.4);
-    background-blend-mode:lighten;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* 任意。スクロール時の固定感を出すならあり */
-}
-
 .profiler-results {
     display: none;
 }
@@ -128,7 +117,8 @@ a#head-top:hover {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(to right, rgba(13, 128, 214, 0.42), rgba(0, 107, 139, 0.12));
-    padding: 40px 16px;
 }
-  
