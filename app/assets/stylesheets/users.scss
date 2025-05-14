@@ -1,4 +1,5 @@
 .cover-user-show {
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     background-image: url(/assets/mypage_kari.JPG);
@@ -8,6 +9,7 @@
 }
 
 .cover-user-index {
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     background-image: url(/assets/users_kari.JPG);
@@ -17,6 +19,7 @@
 }
 
 .cover-user-edit {
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     background-image: url(/assets/mypage_edit_kari.JPG);

@@ -3,6 +3,7 @@ h1 {
 }
 
 .cover-new {
+    min-height: 100vh;
     height: 110%;
     width: 100%;
     background-image: url(/assets/new_kari.JPG);
@@ -20,6 +21,7 @@ h1 {
 }
 
 .cover-index {
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     background-image: url(/assets/index_kari.JPG);
@@ -43,6 +45,7 @@ h1 {
 }
 
 .cover-show {
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     background-image: url(/assets/show_kari.JPG);
@@ -56,6 +59,7 @@ h1 {
 }
 
 .cover-edit {
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     background-image: url(/assets/edit_kari.JPG);
