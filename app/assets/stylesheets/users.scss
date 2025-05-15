@@ -46,6 +46,7 @@
 
 .card .card-body {
     padding: 0.5rem !important;
+    max-width: clamp(150px, 60%, 400px);
 }
 
 .ellipsis {
@@ -67,9 +68,9 @@
 }
 
 .ellipsis {
+    max-width: clamp(150px, 60%, 400px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
-    width: 100%; 
 }
