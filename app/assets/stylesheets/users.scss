@@ -58,7 +58,6 @@
 }
 
 .card .caption {
-    max-width: 100%;
     overflow: hidden;
 }
 
@@ -68,7 +67,7 @@
 }
 
 .ellipsis {
-    max-width: clamp(150px, 60%, 400px);
+    max-width: clamp(150px, 60%, 580px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
