@@ -57,7 +57,8 @@
 }
 
 .card .caption {
-    max-width: 650px;
+    max-width: 100%;
+    overflow: hidden
 }
 
 .rounded-circle {
