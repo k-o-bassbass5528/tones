@@ -65,24 +65,26 @@
     display: inline-block;
 }
 
-user-card-link {
-    all: unset;
-    display: block;
+.user-card-link {
     color: black;
     text-decoration: underline;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 2px;
     text-underline-offset: 3px;
-
-    .user-name, .user-profile, .user-posts {
-        color: black;
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 3px;
-    }
-
+  
     &:hover {
-        .user-name, .user-profile, .user-posts {
-            color: aqua;
-        }
+      color: aqua;
     }
-}
+  
+    .user-name, .user-profile {
+      color: inherit;
+    }
+  }
+  
+  .user-posts {
+    color: black;
+  
+    .user-card-link:hover & {
+      color: aqua;
+    }
+  }
+  
