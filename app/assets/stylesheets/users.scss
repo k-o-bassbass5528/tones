@@ -44,9 +44,8 @@
     color: #212529;
 }
 
-.card .card-body {
-    padding: 0.5rem !important;
-    max-width: clamp(150px, 60%, 400px);
+.post-card .card-body {
+    padding: 0.5rem;
 }
 
 .ellipsis {
