@@ -26,7 +26,7 @@
                     <div>
                         <div class="d-flex align-items-center mb-1">
                             <%= profile_image_for(post.user, size: "25x25", css_class: "mb-3") %>
-                            <span class="ml-2 small ellipsis"><%= post.user.name %></span>
+                            <span class="ml-2 small post-ellipsis"><%= post.user.name %></span>
                         </div>
                         <div class="mb-1 d-flex justify-content-center">
                             <%= image_tag post.images.first, format: 'jpeg', class: "image-thumb mx-auto d-block" %>
@@ -35,7 +35,7 @@
 
                     <!-- 下部：タイトルとコメント数 -->
                     <div>
-                        <p class="caption mb-0 small ellipsis"><%= post.instrument %></p>
+                        <p class="caption mb-0 small post-ellipsis"><%= post.instrument %></p>
                         <p class="caption mb-0 small text-muted">
                             <%= "#{post.comments.count}コメント " %><%= " 閲覧数:#{post.view_counts.count}" %>
                         </p>

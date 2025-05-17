@@ -5,8 +5,8 @@
         <div class="d-flex">
           <%= profile_image_for(user, size: "50x50", css_class: "mt-3 profile-img") %>
           <div class="ms-3 mt-2">
-            <p class="caption h4 mb-1 ellipsis"><%= user.name %></p>
-            <p class="caption h6 ellipsis"><%= user.profile %></p>
+            <p class="caption h4 mb-1 user-ellipsis"><%= user.name %></p>
+            <p class="caption h6 user-ellipsis"><%= user.profile %></p>
           </div>
         </div>
         <p class="caption ms-3 mb-2"><%= "#{user.posts.published.count} 投稿" %></p>
