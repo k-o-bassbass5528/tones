@@ -48,9 +48,11 @@
     padding: 0.5rem;
 }
 
-.card .caption {
-    overflow: hidden;
-}
+.user-caption {
+    font-size: 16px;
+    text-decoration: underline; // 下線戻すなら
+    color: black;
+}  
 
 .rounded-circle {
     border-radius: 50%;
