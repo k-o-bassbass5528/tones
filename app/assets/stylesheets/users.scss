@@ -48,14 +48,6 @@
     padding: 0.5rem;
 }
 
-.user-ellipsis {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 580px;
-    display: inline-block;
-}
-
 .card .caption {
     overflow: hidden;
 }
@@ -65,10 +57,32 @@
     object-fit: cover;
 }
 
-.ellipsis {
+.user-ellipsis {
     max-width: clamp(160px, 60%, 600px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: inline-block;
+}
+
+user-card-link {
+    all: unset;
     display: block;
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+
+    .user-name, .user-profile, .user-posts {
+        color: black;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+    }
+
+    &:hover {
+        .user-name, .user-profile, .user-posts {
+            color: aqua;
+        }
+    }
 }
