@@ -44,14 +44,12 @@
     color: #212529;
 }
 
-.post-card .card-body {
-    padding: 0.5rem;
-}
-
 .user-caption {
     font-size: 16px;
     text-decoration: underline; // 下線戻すなら
     color: black;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }  
 
 .rounded-circle {
@@ -70,7 +68,7 @@
 .user-card-link {
     color: black;
     text-decoration: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   
     &:hover {
