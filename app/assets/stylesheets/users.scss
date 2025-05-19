@@ -58,7 +58,7 @@
 }
 
 .user-ellipsis {
-    max-width: clamp(160px, 60%, 650px);
+    max-width: clamp(150px, 60%, 640px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
