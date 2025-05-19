@@ -58,7 +58,7 @@
 }
 
 .user-ellipsis {
-    max-width: clamp(160px, 60%, 640px);
+    max-width: clamp(160px, 55%, 640px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -68,7 +68,7 @@
 .user-card-link {
     color: black;
     text-decoration: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   
     &:hover {
