@@ -173,3 +173,32 @@ prev a:hover {
 .rounded-circle:hover {
     box-shadow: 0 0 0 1px aqua;
 }
+
+.index-left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+    @media (max-width:768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.post-card {
+    flex: 0 1 calc(25% -1rem);
+    max-width: 300px;
+
+    @media (max-width:992px) {
+        flex: 0 1 calc(33.33% - 1rem);
+    }
+
+    @media (max-width: 768px) {
+        flex: o 1 calc(50% - 1rem);
+    }
+
+    @media (max-width: 576px) {
+        flex: 0 1 100%;
+    }
+}
