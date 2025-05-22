@@ -190,20 +190,22 @@ prev a:hover {
 .index-left {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
     justify-content: center;
+    width: 100%;
 }
 
 .post-card {
-    flex: 0 1 calc(25% - 1rem);
-    max-width: none;
+    flex: 0 1 calc(25% - 0.5rem);
+    min-width: 160px;
+    margin: 0;
 
-    @media (max-width:992px) {
-        flex: 0 1 calc(33.33% - 1rem);
+    @media (max-width: 992px) {
+        flex: 0 1 calc(33.33% - 0.5rem);
     }
 
     @media (max-width: 768px) {
-        flex: 0 1 calc(50% - 1rem);
+        flex: 0 1 calc(50% - 0.5rem);
         max-width: 320px;
         margin: 0 auto;
     }
