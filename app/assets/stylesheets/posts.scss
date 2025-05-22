@@ -7,9 +7,13 @@ h1 {
     height: 110%;
     width: 100%;
     background-image: url(/assets/new_kari.JPG);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
-    background-size: 100% 100%;
+    background-size: cover;
+    position: relative;
 }
 
 .form-label {
@@ -30,9 +34,13 @@ h1 {
     height: 100%;
     width: 100%;
     background-image: url(/assets/index_kari.JPG);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
-    background-size: 100% 100%;
+    background-size: cover;
+    position: relative;
 }
 
 .one-post img:hover {
@@ -50,9 +58,13 @@ h1 {
     height: 100%;
     width: 100%;
     background-image: url(/assets/show_kari.JPG);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
-    background-size: 100% 100%;
+    background-size: cover;
+    position: relative;
 }
 
 #text {
@@ -64,9 +76,13 @@ h1 {
     height: 100%;
     width: 100%;
     background-image: url(/assets/edit_kari.JPG);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
-    background-size: 100% 100%;
+    background-size: cover;
+    position: relative;
 }
 
 .page a,
