@@ -18,6 +18,11 @@ h1 {
 
 .form-group {
     width: 600px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 0 1rem;
+    }
 }
 
 .cover-index {
@@ -146,6 +151,14 @@ prev a:hover {
     max-height: 160px;
     object-fit: cover;
     object-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+
+    @media (max-width: 576px) {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .post-ellipsis {
@@ -179,26 +192,24 @@ prev a:hover {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-
-    @media (max-width:768px) {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 .post-card {
-    flex: 0 1 calc(25% -1rem);
-    max-width: 300px;
+    flex: 0 1 calc(25% - 1rem);
+    max-width: none;
 
     @media (max-width:992px) {
         flex: 0 1 calc(33.33% - 1rem);
     }
 
     @media (max-width: 768px) {
-        flex: o 1 calc(50% - 1rem);
+        flex: 0 1 calc(50% - 1rem);
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     @media (max-width: 576px) {
         flex: 0 1 100%;
+        max-width: 100%;
     }
 }
