@@ -13,3 +13,8 @@ document.addEventListener('turbo:load', function() {
         });
     }
 });
+
+window.toggleSidebar = function() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('open');
+}

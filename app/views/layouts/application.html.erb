@@ -12,6 +12,9 @@
 
   <body class="<%= content_for?(:body_class) ? yield(:body_class) : '' %>">
     <% if user_signed_in? %>
+      <div class="hamburger" onclick="toggleSidebar()">
+        ≡
+      </div>
       <aside class="sidebar">
         <!-- 上部：マイページとロゴ -->
         <div class="sidebar-top">
