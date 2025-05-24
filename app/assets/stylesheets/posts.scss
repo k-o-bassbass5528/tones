@@ -2,18 +2,34 @@ h1 {
     font-family: serif;
 }
 
+.cover-index,
+.cover-show,
+.cover-edit,
 .cover-new {
     min-height: 100vh;
-    height: 110%;
     width: 100%;
-    background-image: url(/assets/new_kari.JPG);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
     background-size: cover;
-    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.cover-index {
+    background-image: url(/assets/index_kari.JPG);
+}
+
+.cover-show {
+    background-image: url(/assets/show_kari.JPG);
+}
+
+.cover-edit {
+    background-image: url(/assets/edit_kari.JPG);
+}
+
+.cover-new {
+    background-image: url(/assets/new_kari.JPG);    
 }
 
 .form-label {
@@ -29,20 +45,6 @@ h1 {
     }
 }
 
-.cover-index {
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
-    background-image: url(/assets/index_kari.JPG);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-color: rgba(255, 255, 255, 0.4);
-    background-blend-mode: lighten;
-    background-size: cover;
-    position: relative;
-}
-
 .one-post img:hover {
     transform: scale(1.1,1.1);
 }
@@ -53,36 +55,8 @@ h1 {
     text-decoration: none;
 }
 
-.cover-show {
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
-    background-image: url(/assets/show_kari.JPG);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-color: rgba(255, 255, 255, 0.4);
-    background-blend-mode: lighten;
-    background-size: cover;
-    position: relative;
-}
-
 #text {
     font-size: 18px;
-}
-
-.cover-edit {
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
-    background-image: url(/assets/edit_kari.JPG);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-color: rgba(255, 255, 255, 0.4);
-    background-blend-mode: lighten;
-    background-size: cover;
-    position: relative;
 }
 
 .page a,
