@@ -205,3 +205,36 @@ prev a:hover {
         max-width: 100%;
     }
 }
+
+#imageModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#imageModal .modal-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalImage {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    aspect-ratio: auto;
+    display: block;
+}
