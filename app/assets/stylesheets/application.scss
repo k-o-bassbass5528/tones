@@ -148,3 +148,21 @@ html, body {
     color: white;
     line-height: 1;
 }
+
+body.posts.show {
+    .cover-show {
+      background-image: url(asset-path("posts-bg.jpg"));
+      background-size: cover;
+      background-position: center;
+      min-height: 300px; // 高さ潰れ防止
+    }
+}
+  
+body.users.show {
+    .cover-show {
+      background-image: url(asset-path("users-bg.jpg"));
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+    }
+}  

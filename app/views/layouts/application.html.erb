@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="<%= content_for?(:body_class) ? yield(:body_class) : '' %>">
+  <body class='<%= "#{controller.controller_name} #{controller.action_name} #{yield(:body_class) if content_for?(:body_class)}" %>'>
     <% if user_signed_in? %>
       <div class="hamburger" onclick="toggleSidebar()">
         <div class="humburger-icon">≡</div>
