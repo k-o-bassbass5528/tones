@@ -185,3 +185,20 @@ body.users.show .cover-show {
     @include cover-style;
     background-image: url(asset-path("users-bg.jpg"));
 }
+
+body.users.edit .cover-edit {
+    @include cover-style;
+    background-image: url(asset-path("mypage_edit_kari.JPG"));
+}
+
+body.users.index .cover-index,
+body.users.followers .cover-followers,
+body.users.follows .cover-follows {
+    @include cover-style;
+    background-image: url(asset-path("users_kari.JPG"));
+}
+
+body.users.show .cover-show {
+    @include cover-style;
+    background-image: url(asset-path("mypage_kari.JPG"));
+}
