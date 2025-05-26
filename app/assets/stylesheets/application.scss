@@ -149,72 +149,40 @@ html, body {
     line-height: 1;
 }
 
-body.posts.index {
-    .cover-index {
-      background-image: url(asset-path("index_kari.JPG"));
-      min-height: 100vh;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.4);
-      background-blend-mode: lighten;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+@mixin cover-style {
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-body.posts.show {
-    .cover-show {
-      background-image: url(asset-path("show_kari.JPG"));
-      min-height: 100vh;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.4);
-      background-blend-mode: lighten;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+body.posts.index .cover-index,
+body.posts.confirm .cover-confirm {
+    @include cover-style;
+    background-image: url(asset-path("index_kari.JPG"));
 }
 
-body.posts.new {
-    .cover-new {
-      background-image: url(asset-path("new_kari.JPG"));
-      min-height: 100vh;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.4);
-      background-blend-mode: lighten;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+body.posts.show .cover-show {
+    @include cover-style;
+    background-image: url(asset-path("show_kari.JPG"));
 }
 
-body.posts.edit {
-    .cover-edit {
-      background-image: url(asset-path("edit_kari.JPG"));
-      min-height: 100vh;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.4);
-      background-blend-mode: lighten;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+body.posts.new .cover-new {
+    @include cover-style;
+    background-image: url(asset-path("new_kari.JPG"));
 }
 
-body.users.show {
-    .cover-show {
-      background-image: url(asset-path("users-bg.jpg"));
-      min-height: 100vh;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.4);
-      background-blend-mode: lighten;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-}  
+body.posts.edit .cover-edit {
+    @include cover-style;
+    background-image: url(asset-path("edit_kari.JPG"));
+}
+
+
+body.users.show .cover-show {
+    @include cover-style;
+    background-image: url(asset-path("users-bg.jpg"));
+}
