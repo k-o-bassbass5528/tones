@@ -149,20 +149,72 @@ html, body {
     line-height: 1;
 }
 
-body.posts.show {
-    .cover-show {
-      background-image: url(asset-path("posts-bg.jpg"));
+body.posts.index {
+    .cover-index {
+      background-image: url(asset-path("index_kari.JPG"));
+      min-height: 100vh;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: lighten;
       background-size: cover;
-      background-position: center;
-      min-height: 300px; // 高さ潰れ防止
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 }
-  
+
+body.posts.show {
+    .cover-show {
+      background-image: url(asset-path("show_kari.JPG"));
+      min-height: 100vh;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: lighten;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+}
+
+body.posts.new {
+    .cover-new {
+      background-image: url(asset-path("new_kari.JPG"));
+      min-height: 100vh;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: lighten;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+}
+
+body.posts.edit {
+    .cover-edit {
+      background-image: url(asset-path("edit_kari.JPG"));
+      min-height: 100vh;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: lighten;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+}
+
 body.users.show {
     .cover-show {
       background-image: url(asset-path("users-bg.jpg"));
+      min-height: 100vh;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: lighten;
       background-size: cover;
-      background-position: center;
-      min-height: 300px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 }  
