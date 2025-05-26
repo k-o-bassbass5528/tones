@@ -197,3 +197,13 @@ body.users.show .cover-user-show {
     @include cover-style;
     background-image: url(asset-path("mypage_kari.JPG"));
 }
+
+body.rooms.index .cover-index {
+    @include cover-style;
+    background-image: url(asset-path("DMindex.jpg"));
+}
+
+body.rooms.show .cover-show {
+    @include cover-style;
+    background-image: url(asset-path("DMroom.JPG"));
+}
