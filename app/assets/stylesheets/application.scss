@@ -181,7 +181,6 @@ body.posts.edit .cover-edit {
     background-image: url(asset-path("edit_kari.JPG"));
 }
 
-
 body.users.show .cover-show {
     @include cover-style;
     background-image: url(asset-path("users-bg.jpg"));
