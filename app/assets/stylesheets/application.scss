@@ -181,24 +181,19 @@ body.posts.edit .cover-edit {
     background-image: url(asset-path("edit_kari.JPG"));
 }
 
-body.users.show .cover-show {
-    @include cover-style;
-    background-image: url(asset-path("users-bg.jpg"));
-}
-
-body.users.edit .cover-edit {
+body.users.edit .cover-user-edit {
     @include cover-style;
     background-image: url(asset-path("mypage_edit_kari.JPG"));
 }
 
-body.users.index .cover-index,
-body.users.followers .cover-followers,
-body.users.follows .cover-follows {
+body.users.index .cover-user-index,
+body.users.followers .ccover-user-index,
+body.users.follows .cover-user-index {
     @include cover-style;
     background-image: url(asset-path("users_kari.JPG"));
 }
 
-body.users.show .cover-show {
+body.users.show .cover-user-show {
     @include cover-style;
     background-image: url(asset-path("mypage_kari.JPG"));
 }
