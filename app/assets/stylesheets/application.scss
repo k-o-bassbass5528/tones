@@ -187,7 +187,7 @@ body.users.edit .cover-user-edit {
 }
 
 body.users.index .cover-user-index,
-body.users.followers .ccover-user-index,
+body.users.followers .cover-user-index,
 body.users.follows .cover-user-index {
     @include cover-style;
     background-image: url(asset-path("users_kari.JPG"));
