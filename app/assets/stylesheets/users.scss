@@ -57,4 +57,9 @@
       color: aqua;
     }
   }
-  
+
+.user-text-box {
+    max-width: 100%;
+    flex: 1;
+    min-width: 0;
+}
