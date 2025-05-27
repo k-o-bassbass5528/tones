@@ -1,5 +1,5 @@
 <div class="cover-user-show">
-    <div class="container d-flex flex-column align-items-center">
+    <div class="container-fluid d-flex flex-column align-items-center">
         <div class="row mt-5">
             <% if user_signed_in? && @user == current_user %>
                 <h1 class="font-weight-normal d-flex flex-column align-items-center">マイページ</h1><br>
@@ -40,7 +40,7 @@
         <% end %>
         <div class="d-flex w-100"> 
             <%= profile_image_for(@user, size: "100x100", css_class: "mb-3 profile-img") %>
-            <h4 class="ml-3 mb-3 card w-100 profile"><%= @user.profile %></h4>
+            <h4 class="ml-3 mb-3 w-100 card profile"><%= @user.profile %></h4>
         </div>
         <div class="d-flex">
             <%= link_to follows_user_path(@user) do %>
@@ -50,9 +50,9 @@
                 <h6>フォロワー<%= @followerUsers.count %></h6>
             <% end %>
         </div>
-        <div class="row mt-5 index-left w-100">
+        <div class="row mt-5 index-left w-100 g-3">
             <% @posts.each do |post| %>
-                <div class="one-post col-sm-3 mb-3">
+                <div class="one-post col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
                     <%= link_to post_path(post), class: "text-decoration-none" do %>
                         <div class="card <%= 'draft-card' if post.draft? %> h-100 d-flex flex-column justify-content-between">
                             <div class="card-body p-2 d-flex flex-column justify-content-between">
