@@ -28,7 +28,7 @@
 }
 
 .user-ellipsis {
-    max-width: clamp(160px, 100%, 700px);
+    max-width: clamp(130px, 100%, 700px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -62,4 +62,20 @@
     max-width: 100%;
     flex: 1;
     min-width: 0;
+}
+
+.responsive-container {
+    width: 60%;
+
+    @media (max-width: 1200px) {
+        width: 70%;
+    }
+
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+
+    @media (max-width: 576px) {
+        width: 90%;
+    }
 }
