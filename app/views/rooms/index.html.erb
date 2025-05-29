@@ -20,11 +20,10 @@
                                     <% end %>
                                 </div>
                                 <% if room.messages.last %>
-                                    <div class="mt-2 text-muted">
-                                        <% if room.messages.last.user == current_user %>
-                                            あなた：
-                                        <% end %>
-                                        <%= truncate(room.messages.first.message, length: 50) %>
+                                    <div class="mt-2 text-muted d-flex align-items-center">
+                                        <span class="truncate-message">
+                                            <%= room.messages.last.user == current_user ? 'あなた：' : '' %><%= room.messages.first.message %>
+                                        </span>
                                         <small class="text-muted">
                                             (<%= room.messages.first.created_at.strftime('%Y/%m/%d %H:%M') %>)
                                         </small>
