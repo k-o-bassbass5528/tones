@@ -83,10 +83,30 @@
 }
 
 .card {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: none;
+    flex: 1 1 auto;
 }
 
 .one-post {
-    width: auto;
+    padding: 0 !important;
+    margin: 0 !important;
+}  
+
+.card,
+.one-post,
+.row,
+.container {
+  outline: 1px solid red !important;
 }
+
+.index-left {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    --bs-gutter-x: 1rem;
+  
+    .one-post {
+      padding-left: 0;
+      padding-right: 0;
+    }
+}  
