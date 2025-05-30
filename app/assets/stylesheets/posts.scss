@@ -208,3 +208,13 @@ prev a:hover {
     aspect-ratio: auto;
     display: block;
 }
+
+@media (max-width: 575.98px) {
+    .post-detail-col,
+    .comments {
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-top: 1rem;
+    }
+}
+  

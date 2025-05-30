@@ -11,8 +11,8 @@
                 <% end %>
             </div>
         <% end %>
-        <div class="container d-flex">
-            <div class="d-block" style="width: 70%;">
+        <div class="container d-flex flex-column flex-sm-row">
+            <div class="post-detail-col d-block" style="width: 70%;">
                 <p class="caption post-author mb-2 d-flex align-items-center">
                     <%= link_to user_path(@post.user) do %>
                         <%= profile_image_for(@post.user, size: "37x37", css_class: "me-2") %> 
