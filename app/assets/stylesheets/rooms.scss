@@ -68,13 +68,13 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     vertical-align: middle;
-    max-width: 900px;
+    max-width: 550px;
   
     @media (max-width: 575.98px) {
       max-width: 200px;
     }
   
     @media (min-width: 768px) {
-      max-width: 300px;
+      max-width: 550px;
     }
 }
