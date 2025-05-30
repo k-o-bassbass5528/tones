@@ -15,13 +15,13 @@
             </div>
         </div>
     </div>
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row">
             <% if @messages.present? %>
                 <% @messages.reverse_each do |m| %>
                     <% if @myUserId == m.user.id %>
                         <div class="message-container my-message">
-                            <div class="d-flex justify-content-end align-items-center">
+                            <div class="message-inner">
                                 <div class="message-content">
                                     <p class="mb-0"><%= m.message %>
                                         <span class="text-white-50 ms-2 small">
@@ -29,15 +29,15 @@
                                         </span>
                                     </p>
                                 </div>
-                                <div class="user-icon ms-2">
+                                <div class="user-icon">
                                     <%= profile_image_for(m.user, size: "40x40") %>
                                 </div>
                             </div>
                         </div>
                     <% else %>
                         <div class="message-container other-message">
-                            <div class="d-flex align-items-center">
-                                <div class="user-icon me-2">
+                            <div class="message-inner">
+                                <div class="user-icon">
                                     <%= profile_image_for(m.user, size: "40x40") %>
                                 </div>
                                 <div class="message-content">
