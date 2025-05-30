@@ -3,7 +3,7 @@
         <div class="row mt-5">
             <h1 class="font-weight-normal">DM一覧</h1>
         </div>
-        <div class="row mt-5" style="width: 60%;">
+        <div class="row mt-5 responsive-card-row">
             <% @rooms.each do |room| %>
                 <div class="col-12 mb-2">
                     <%= link_to room_path(room), class: "text-decoration-none" do %>

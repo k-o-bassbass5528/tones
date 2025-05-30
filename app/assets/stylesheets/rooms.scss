@@ -68,18 +68,35 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     vertical-align: middle;
-    max-width: 700px;
+    max-width: 720px;
   
     @media (max-width: 575.98px) {
       max-width: 300px;
     }
   
     @media (min-width: 768px) {
-      max-width: 700px;
+      max-width: 720px;
     }
 }
 
 .message-timestamp {
     margin-top: 2px;
     font-size: 0.8rem;
-}  
+}
+
+.responsive-card-row {
+    width: 60%;
+
+    @media (max-width: 992px) {
+        width: 70%;
+    }
+  
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+  
+    @media (max-width: 576px) {
+        width: 90%;
+    }
+}
+  
