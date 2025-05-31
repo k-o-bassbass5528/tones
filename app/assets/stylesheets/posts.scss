@@ -186,13 +186,12 @@ prev a:hover {
     background-color: rgba(0,0,0,0.8);
     z-index: 1000;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #imageModal .modal-inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     max-width: 90vw;
     max-height: 90vh;
     display: flex;
@@ -217,4 +216,27 @@ prev a:hover {
       margin-top: 1rem;
     }
 }
-  
+
+.modal-dialog-custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 992px) {
+      width: 60%;
+    }
+
+    @media (max-width: 768px) {
+      width: 75%;
+    }
+
+    @media (max-width: 576px) {
+      width: 88%;
+    }
+}
