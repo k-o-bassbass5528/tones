@@ -57,7 +57,7 @@
                         <div class="card <%= 'draft-card' if post.draft? %> h-100 d-flex flex-column justify-content-between">
                             <div class="card-body p-2 d-flex flex-column justify-content-between">
                                 <div class="d-flex align-items-center mb-1">
-                                    <span class="ml-2 text-dark ellipsis"><%= post.instrument %></span>
+                                    <span class="ml-1 text-dark ellipsis"><%= post.instrument %></span>
                                 </div>
                                 <div class="mb-1 d-flex justify-content-center">
                                     <%= image_tag post.images.first, format: 'jpeg', class: "img-fluid image-thumb mx-auto d-block" %>
