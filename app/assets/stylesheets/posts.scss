@@ -241,3 +241,16 @@ prev a:hover {
       width: 88%;
     }
 }
+
+.custom-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+}
