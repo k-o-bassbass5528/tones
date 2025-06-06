@@ -21,7 +21,7 @@
                 </p>
                 <div class="d-flex flex-wrap">
                     <% if @post.images.count >= 2 %>
-                        <div class="d-flex flex-wrap" style="width: 610px; gap: 5px;">
+                        <div class="post-images-wrapper">
                             <% @post.images.each_with_index do |image, index| %>
                                 <div style="width: calc(50% - 2.5px); cursor: pointer;" onclick="showImageModal(<%= index %>)">
                                     <%= image_tag image, format: 'jpeg', class: "preview-image" %>
