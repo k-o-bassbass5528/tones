@@ -244,7 +244,8 @@ prev a:hover {
 
 @media (max-width: 767.98px) {
     .container {
-      max-width: 90% !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
   
     .post-detail-col,
@@ -270,4 +271,4 @@ prev a:hover {
     gap: 5px;
     display: flex;
     flex-wrap: wrap;
-}  
+}
