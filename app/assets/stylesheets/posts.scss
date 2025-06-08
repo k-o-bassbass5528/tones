@@ -266,9 +266,9 @@ prev a:hover {
     flex-wrap: wrap;
 }
 
-  
-.post-detail-col,
-.comments {
-    box-sizing: border-box;
-    outline: 1px solid red;
+@media (max-width: 767.98px) {
+    .post-detail-col,
+    .comments {
+      width: 100%;
+    }
 }
