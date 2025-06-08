@@ -267,13 +267,8 @@ prev a:hover {
 }
 
   
-.post-detail-col {
-    flex: 1 1 50%;
-    min-width: 0;
-}
-
-
+.post-detail-col,
 .comments {
-    flex: 1 1 45%;
-    min-width: 0;
+    box-sizing: border-box;
+    outline: 1px solid red;
 }
