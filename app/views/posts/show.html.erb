@@ -11,7 +11,7 @@
                 <% end %>
             </div>
         <% end %>
-        <div class="container-sm d-flex flex-column flex-sm-row">
+        <div class="container-sm d-flex flex-column flex-md-row">
             <div class="post-detail-col d-block">
                 <p class="caption post-author mb-2 d-flex align-items-center">
                     <%= link_to user_path(@post.user) do %>
@@ -124,7 +124,7 @@
                 <% end %>
                 <%= link_to '投稿一覧ページへ', posts_path, class: "btn btn-dark mt-3 "%>
             </div>
-            <div class="comments mt-5" style="width: 60%;">
+            <div class="comments mt-5">
                 <%= form_with(model:[@post, @comment], local: true) do |f| %> 
                     <%= f.text_area :comment, :size=>"50x3", placeholder: "コメントする(140字まで)", style: "width: 100%;", maxlength: 140 %>
                     <%= f.submit "送信する", class: "btn btn-success mb-4" %>
