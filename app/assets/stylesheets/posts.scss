@@ -286,3 +286,9 @@ prev a:hover {
       flex-direction: column !important;
     }
 }
+
+@media (max-width: 768px) {
+    .font-weight-normal {
+      margin-left: 3rem;
+    }
+}
