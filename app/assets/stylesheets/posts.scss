@@ -287,8 +287,10 @@ prev a:hover {
     }
 }
 
-@media (max-width: 768px) {
+.cover-edit {
+    @media (max-width: 768px) {
     .font-weight-normal {
       margin-left: 4rem;
     }
+  }
 }
