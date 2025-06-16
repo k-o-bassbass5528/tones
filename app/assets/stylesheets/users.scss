@@ -61,7 +61,7 @@
   }
 
 .user-text-box {
-    max-width: 100%;
+    max-width: 95%;
     flex: 1;
     min-width: 0;
 }
@@ -120,4 +120,8 @@
       padding-left: 0;
       padding-right: 0;
     }
-}  
+}
+
+.user-profile-card {
+  max-width: 85%;
+}
