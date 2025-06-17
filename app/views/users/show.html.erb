@@ -50,7 +50,7 @@
                 <h6>フォロワー<%= @followerUsers.count %></h6>
             <% end %>
         </div>
-        <div class="row mt-5 index-left w-100 g-3 d-flex flex-wrap">
+        <div class="row mt-2 index-left w-100 g-3 d-flex flex-wrap">
             <% @posts.each do |post| %>
                 <div class="one-post">
                     <%= link_to post_path(post), class: "text-decoration-none" do %>
