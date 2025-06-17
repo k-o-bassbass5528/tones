@@ -95,17 +95,17 @@
     flex: 0 0 100%;
     max-width: 100%;
   
-    @media (min-width: 576px) {
+    @media (min-width: 576.98px) {
       flex: 0 0 49%;
       max-width: 49%;
     }
   
-    @media (min-width: 768px) {
+    @media (min-width: 768.98px) {
       flex: 0 0 32%;
       max-width: 32%;
     }
   
-    @media (min-width: 992px) {
+    @media (min-width: 992.98px) {
       flex: 0 0 24%;
       max-width: 24%;
     }
