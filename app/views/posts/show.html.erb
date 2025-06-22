@@ -126,7 +126,7 @@
             </div>
             <div class="comments mt-5">
                 <%= form_with(model:[@post, @comment], local: true) do |f| %> 
-                    <%= f.text_area :comment, :size=>"50x3", placeholder: "コメントする(140字まで)", style: "width: 100%;", maxlength: 140 %>
+                    <%= f.text_area :comment, :size=>"70x3", placeholder: "コメントする(140字まで)", style: "width: 100%;", maxlength: 140 %>
                     <%= f.submit "送信する", class: "btn btn-success mb-4" %>
                 <% end %>
                 <p>コメント件数：<%= @comments.count %></p>
